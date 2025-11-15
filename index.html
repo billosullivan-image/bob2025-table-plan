@@ -172,7 +172,8 @@
   right: 14px;
   top: 0;
   bottom: 0;
-  margin: auto 0;               /* vertically center between top & bottom */
+  margin: auto 0;
+  transform: translateY(-1px);   /* fine-tuned upward nudge */
   width: 22px;
   height: 22px;
   border-radius: 999px;
@@ -181,12 +182,13 @@
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.9rem;
   line-height: 1;
-  display: none;                /* shown only when there's text */
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 0;
   cursor: pointer;
 }
+
 
 .clear-btn:focus-visible {
   outline: 2px solid #ffffff;
