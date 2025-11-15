@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IMAGE Business of Beauty 2025 - Table Plan Lookup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #000000;
+      --bg-elevated: #111111;
+      --text: #ffffff;
+      --text-muted: #cccccc;
+      --accent: #ffffff;
+      --border-subtle: #333333;
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      /* Let the content flow naturally instead of flex-centering */
+      display: block;
+    }
+
+
+    .shell {
+      width: 100%;
+      max-width: 700px;
+      padding: 16px;
+      padding-bottom: 32px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0 0 4px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #1f1f1f 0, #050505 55%, #000000 100%);
+      border-radius: 24px;
+      padding: 14px;
+      border: 1px solid var(--border-subtle);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
+
+    .mode-toggle {
+      display: inline-flex;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .mode-toggle button {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.18s ease, color 0.18s ease, transform 0.1s ease;
+    }
+
+    .mode-toggle button.active {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      transform: translateY(-0.5px);
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    .field {
+      position: relative;
+    }
+
+    .field label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(5, 5, 5, 0.9);
+      color: var(--text);
+      padding: 9px 14px;
+      padding-right: 40px;
+      font-size: 0.9rem;
+      outline: none;
+      appearance: none;
+      margin-bottom: 6px; /* space under box */
+    }
+
+    .field input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .field select {
+      cursor: pointer;
+    }
+
+    .field-icon {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      pointer-events: none;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+ .clear-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(calc(-50% - 1px)); /* iOS vertical alignment fix */
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+    .clear-btn:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+
+    .hint {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 6px; /* pulled away from the box */
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .results {
+      margin-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      padding-top: 10px;
+      max-height: none;       /* make sure there is no cap */
+      overflow: visible;      /* let content define height */
+    }
+
+    .result-item {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+	  .result-item:first-child {
+		  border-top: 1px solid rgba(255, 255, 255, 0.16);
+		  padding-top: 10px;
+	  }
+
+    .result-item:last-child {
+      border-bottom: none;
+    }
+
+    .result-name {
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+    }
+
+    .result-company {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .result-table {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .empty-state {
+      padding: 16px 2px 6px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      text-align: left;
+    }
+
+    .error-state {
+      padding: 10px 0 0;
+      font-size: 0.8rem;
+      color: #ffb3b3;
+    }
+
+    @media (min-width: 640px) {
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      .card {
+        padding: 18px 18px 20px;
+      }
+
+      .controls {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+
+      .controls .field {
+        flex: 1 1 auto;
+      }
+
+      /* IMPORTANT: no .results max-height here */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header>
+        <h1>Table Plan Lookup</h1>
+        <p>Search the table plan by name, company, or table.</p>
+      </header>
+
+      <main class="card" aria-label="Guest search and table browser">
+        <!-- Mode toggle -->
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+          <div class="mode-toggle" role="tablist" aria-label="Search mode">
+            <button
+              id="mode-search"
+              class="active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-search"
+              type="button"
+            >
+              Search by name / company
+            </button>
+            <button
+              id="mode-table"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-table"
+              type="button"
+            >
+              Browse by table
+            </button>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <section class="controls" aria-live="polite">
+          <!-- Search field -->
+          <div class="field" id="panel-search">
+            <label for="searchInput">Search guests</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Type first name, last name, or company…"
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              id="clearSearch"
+              class="clear-btn"
+              aria-label="Clear search"
+            >
+              ×
+            </button>
+            <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
+          </div>
+
+
+          <!-- Table dropdown -->
+          <div class="field" id="panel-table" style="display: none;">
+            <label for="tableSelect">Table number</label>
+            <select id="tableSelect">
+              <option value="">All tables</option>
+            </select>
+            <span class="field-icon" aria-hidden="true">▾</span>
+            <p class="hint">Browse by assigned table.</p>
+          </div>
+        </section>
+
+        <!-- Summary (no total count, just filter text) -->
+        <div class="summary-row" id="summaryRow" aria-live="polite">
+          <span id="activeFilter"></span>
+        </div>
+
+        <!-- Error / status -->
+        <div class="error-state" id="errorMessage" role="alert" style="display:none;"></div>
+
+        <!-- Results -->
+        <section class="results" id="results" aria-live="polite" aria-label="Guest results list">
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+  // Expected CSV header names
+  const CSV_HEADERS = {
+    FIRST_NAMES: "First Names",
+    LAST_NAME: "Last Name",
+    COMPANY: "Company",
+    TABLE: "Table"
+  };
+
+  const state = {
+    guests: [],
+    mode: "search", // "search" | "table"
+    searchTerm: "",
+    selectedTable: "",
+    loaded: false
+  };
+
+  const dom = {};
+
+  document.addEventListener("DOMContentLoaded", () => {
+    cacheDom();
+    bindEvents();
+    loadCsv();
+  });
+
+  function cacheDom() {
+      dom.modeSearchBtn = document.getElementById("mode-search");
+      dom.modeTableBtn = document.getElementById("mode-table");
+      dom.searchPanel = document.getElementById("panel-search");
+      dom.tablePanel = document.getElementById("panel-table");
+      dom.searchInput = document.getElementById("searchInput");
+      dom.tableSelect = document.getElementById("tableSelect");
+      dom.results = document.getElementById("results");
+      dom.errorMessage = document.getElementById("errorMessage");
+      dom.activeFilter = document.getElementById("activeFilter");
+      dom.clearSearchBtn = document.getElementById("clearSearch");
+    }
+
+
+     function bindEvents() {
+      dom.modeSearchBtn.addEventListener("click", () => setMode("search"));
+      dom.modeTableBtn.addEventListener("click", () => setMode("table"));
+
+      dom.searchInput.addEventListener("input", () => {
+        state.searchTerm = dom.searchInput.value;
+        render();
+      });
+
+      dom.tableSelect.addEventListener("change", () => {
+        state.selectedTable = dom.tableSelect.value;
+        render();
+      });
+
+      // Clear button: reset search and refocus input
+      if (dom.clearSearchBtn) {
+        dom.clearSearchBtn.addEventListener("click", () => {
+          state.searchTerm = "";
+          dom.searchInput.value = "";
+          render();
+          dom.searchInput.focus();
+        });
+      }
+    }
+
+
+  async function loadCsv() {
+    try {
+      const response = await fetch("attendees.csv", {
+        headers: { "Accept": "text/csv" }
+      });
+      if (!response.ok) {
+        throw new Error("Could not load attendees.csv (HTTP " + response.status + ")");
+      }
+      const text = await response.text();
+      state.guests = parseCsv(text);
+      state.loaded = true;
+      buildTableDropdown(state.guests);
+      render();
+    } catch (err) {
+      console.error(err);
+      dom.errorMessage.style.display = "block";
+      dom.errorMessage.textContent =
+        "There was a problem loading the guest list. Please let a member of the event team know.";
+      dom.activeFilter.textContent = "Guest list unavailable.";
+      dom.results.innerHTML = "";
+    }
+  }
+
+  // Normalise strings for search:
+  // - lowercase
+  // - strip accents
+  // - remove apostrophes and punctuation
+  // - collapse spaces
+  function normalizeForSearch(str) {
+    return (str || "")
+      .toLowerCase()
+      .normalize("NFD")                      // split accents from letters
+      .replace(/[\u0300-\u036f]/g, "")      // remove accents
+      .replace(/['’`]/g, "")                // remove apostrophes and similar
+      .replace(/[^a-z0-9\s]/g, " ")         // remove other punctuation
+      .replace(/\s+/g, " ")                 // collapse whitespace
+      .trim();
+  }
+
+  function parseCsv(text) {
+    const lines = text
+      .trim()
+      .split(/\r?\n/)
+      .filter(line => line.trim().length > 0);
+
+    if (lines.length < 2) return [];
+
+    const headerLine = lines[0];
+    const headers = headerLine.split(",").map(h => h.trim());
+    const indexMap = {};
+    headers.forEach((h, i) => {
+      indexMap[h.toLowerCase()] = i;
+    });
+
+    function idx(label) {
+      const key = label.toLowerCase();
+      return key in indexMap ? indexMap[key] : -1;
+    }
+
+    const firstIdx = idx(CSV_HEADERS.FIRST_NAMES);
+    const lastIdx = idx(CSV_HEADERS.LAST_NAME);
+    const companyIdx = idx(CSV_HEADERS.COMPANY);
+    const tableIdx = idx(CSV_HEADERS.TABLE);
+
+    const guests = [];
+
+    for (let i = 1; i < lines.length; i++) {
+      const line = lines[i];
+      if (!line.trim()) continue;
+      const cols = line.split(",").map(c => c.trim());
+
+      const firstNames = firstIdx >= 0 ? (cols[firstIdx] || "") : (cols[0] || "");
+      const lastName   = lastIdx  >= 0 ? (cols[lastIdx]  || "") : (cols[1] || "");
+      const company    = companyIdx >= 0 ? (cols[companyIdx] || "") : (cols[2] || "");
+      const table      = tableIdx >= 0 ? (cols[tableIdx] || "") : (cols[3] || "");
+
+      if (!firstNames && !lastName && !company && !table) continue;
+
+      const guest = {
+        firstNames,
+        lastName,
+        company,
+        table
+      };
+
+      // Precompute a normalised search string:
+      guest._search = normalizeForSearch(
+        `${firstNames} ${lastName} ${company}`
+      );
+
+      guests.push(guest);
+    }
+
+    // Sort alphabetically by last name then first names (display order)
+    guests.sort((a, b) => {
+      const lastCmp = a.lastName.localeCompare(b.lastName, undefined, {
+        sensitivity: "base"
+      });
+      if (lastCmp !== 0) return lastCmp;
+      return a.firstNames.localeCompare(b.firstNames, undefined, {
+        sensitivity: "base"
+      });
+    });
+
+    return guests;
+  }
+
+  function buildTableDropdown(guests) {
+    const tables = Array.from(
+      new Set(
+        guests
+          .map(g => (g.table || "").trim())
+          .filter(t => t.length > 0)
+      )
+    );
+
+    const allNumeric = tables.every(t => /^-?\d+$/.test(t));
+    if (allNumeric) {
+      tables.sort((a, b) => Number(a) - Number(b));
+    } else {
+      tables.sort((a, b) =>
+        a.localeCompare(b, undefined, { sensitivity: "base", numeric: true })
+      );
+    }
+
+    for (const table of tables) {
+      const opt = document.createElement("option");
+      opt.value = table;
+      opt.textContent = table;
+      dom.tableSelect.appendChild(opt);
+    }
+  }
+
+  function setMode(mode) {
+    if (mode === state.mode) return;
+    state.mode = mode;
+
+    if (mode === "search") {
+      dom.modeSearchBtn.classList.add("active");
+      dom.modeTableBtn.classList.remove("active");
+      dom.modeSearchBtn.setAttribute("aria-selected", "true");
+      dom.modeTableBtn.setAttribute("aria-selected", "false");
+      dom.searchPanel.style.display = "";
+      dom.tablePanel.style.display = "none";
+      dom.searchInput.focus();
+    } else {
+      dom.modeTableBtn.classList.add("active");
+      dom.modeSearchBtn.classList.remove("active");
+      dom.modeTableBtn.setAttribute("aria-selected", "true");
+      dom.modeSearchBtn.setAttribute("aria-selected", "false");
+      dom.searchPanel.style.display = "none";
+      dom.tablePanel.style.display = "";
+      dom.tableSelect.focus();
+    }
+
+    render();
+  }
+
+  function getFilteredGuests() {
+    if (!state.loaded) return [];
+
+    if (state.mode === "search") {
+      const term = normalizeForSearch(state.searchTerm);
+      if (!term) {
+        // empty search box: show no results
+        return [];
+      }
+      return state.guests.filter(g => g._search.includes(term));
+    } else {
+      const table = (state.selectedTable || "").trim();
+      if (!table) {
+        // no table selected: show no results
+        return [];
+      }
+      return state.guests.filter(
+        g => (g.table || "").toLowerCase() === table.toLowerCase()
+      );
+    }
+  }
+
+  function render() {
+    if (!state.loaded) {
+      dom.activeFilter.textContent = "Loading guest list…";
+      dom.results.innerHTML = "";
+      return;
+    }
+
+    const isSearchMode = state.mode === "search";
+    const searchTermNormalized = normalizeForSearch(state.searchTerm);
+    const hasQuery = isSearchMode
+      ? searchTermNormalized.length > 0
+      : (state.selectedTable || "").trim().length > 0;
+	  
+    // Show clear button only when there is text in the search box
+    if (dom.clearSearchBtn) {
+      if (searchTermNormalized.length > 0 && isSearchMode) {
+        dom.clearSearchBtn.style.display = "flex";
+      } else {
+        dom.clearSearchBtn.style.display = "none";
+      }
+    }
+
+
+    // Update the filter text at the top-right
+    if (!hasQuery) {
+      dom.activeFilter.textContent = "Start typing or choose a table.";
+    } else if (isSearchMode) {
+      dom.activeFilter.textContent = state.searchTerm
+        ? `Filter: “${state.searchTerm}”`
+        : "";
+    } else {
+      dom.activeFilter.textContent = state.selectedTable
+        ? `Table: ${state.selectedTable}`
+        : "";
+    }
+
+    // If there's no query yet, show a gentle hint and no results
+    if (!hasQuery) {
+      dom.results.innerHTML =
+        '<div class="empty-state">Begin by typing a first name, last name, company, or choose a table number from the list.</div>';
+      return;
+    }
+
+    const guests = getFilteredGuests();
+
+    if (guests.length === 0) {
+      dom.results.innerHTML =
+        '<div class="empty-state">No results found. Please check the spelling or try a different name, company, or table number.</div>';
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    guests.forEach(g => {
+      const wrapper = document.createElement("article");
+      wrapper.className = "result-item";
+
+      const nameEl = document.createElement("div");
+      nameEl.className = "result-name";
+      nameEl.textContent = `${g.firstNames} ${g.lastName}`.trim();
+
+      const companyEl = document.createElement("div");
+      companyEl.className = "result-company";
+      companyEl.textContent = g.company || "—";
+
+      const tableEl = document.createElement("div");
+      tableEl.className = "result-table";
+      tableEl.textContent = `Table ${g.table || "TBC"}`;
+
+      wrapper.appendChild(nameEl);
+      wrapper.appendChild(companyEl);
+      wrapper.appendChild(tableEl);
+
+      fragment.appendChild(wrapper);
+    });
+
+    dom.results.innerHTML = "";
+    dom.results.appendChild(fragment);
+  }
+</script>
+
+</body>
+</html>
