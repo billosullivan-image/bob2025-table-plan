@@ -71,6 +71,23 @@
       color: var(--text-muted);
     }
 
+.table-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #e6ca88;                  /* your gold colour */
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.table-link:hover,
+.table-link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
     .card {
       background: radial-gradient(circle at top left, #1f1f1f 0, #050505 55%, #000000 100%);
       border-radius: 24px;
@@ -697,9 +714,12 @@
       companyEl.className = "result-company";
       companyEl.textContent = g.company || "—";
 
-      const tableEl = document.createElement("div");
-      tableEl.className = "result-table";
-      tableEl.textContent = `Table ${g.table || "TBC"}`;
+      const tableEl = document.createElement("button");
+	  tableEl.className = "result-table table-link";
+	  tableEl.textContent = `TABLE ${g.table || "TBC"}`;
+	  tableEl.setAttribute("data-table", g.table);
+	  tableEl.type = "button";
+
 
       wrapper.appendChild(nameEl);
       wrapper.appendChild(companyEl);
@@ -710,6 +730,32 @@
 
     dom.results.innerHTML = "";
     dom.results.appendChild(fragment);
+	 
+// Enable clicking table numbers to load the full table view
+const tableLinks = dom.results.querySelectorAll(".table-link");
+tableLinks.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const table = btn.getAttribute("data-table");
+
+    // Switch UI to table mode
+    state.mode = "table";
+    dom.modeSearchBtn.classList.remove("active");
+    dom.modeTableBtn.classList.add("active");
+    dom.searchPanel.style.display = "none";
+    dom.tablePanel.style.display = "";
+    
+    // Set the dropdown value
+    dom.tableSelect.value = table;
+    state.selectedTable = table;
+
+    // Render full table results
+    render();
+
+    // Scroll to top of results
+    dom.results.scrollTop = 0;
+  });
+});
+
   }
 </script>
 
