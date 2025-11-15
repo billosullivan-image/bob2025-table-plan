@@ -43,6 +43,15 @@
       margin: 0 auto;
     }
 
+.top-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;          /* keeps logo between 40–50% depending on device */
+  width: 45%;              /* preferred target width */
+  height: auto;
+  padding-bottom: 16px;    /* space below the image */
+}
+
     header {
       text-align: center;
       margin-bottom: 16px;
@@ -277,12 +286,17 @@
 <body>
   <div class="page">
     <div class="shell">
-		<img src="https://www.image.ie/wp-content/uploads/2025/11/BOB2025-Logo.png" alt="IMAGE Business of Beauty 2025" width="200" height="200" align="center">
-		<br>
       <header>
-        <h1>Table Plan Lookup</h1>
-        <p>Search the table plan by name, company, or table.</p>
-      </header>
+  <img
+    src="https://www.image.ie/wp-content/uploads/2025/11/BOB2025-Logo.png"
+    alt="IMAGE Business of Beauty 2025 Logo"
+    class="top-logo"
+  />
+
+  <h1>Table Plan Lookup</h1>
+  <p>Search the table plan by name, company, or table.</p>
+</header>
+
 
       <main class="card" aria-label="Guest search and table browser">
         <!-- Mode toggle -->
