@@ -161,12 +161,18 @@
       pointer-events: none;
       color: rgba(255, 255, 255, 0.5);
     }
+	  
+	.input-shell {
+	  position: relative;
+	}
+
 
  .clear-btn {
   position: absolute;
   right: 14px;
-  top: 50%;
-  transform: translateY(calc(-50% - 1px)); /* iOS vertical alignment fix */
+  top: 0;
+  bottom: 0;
+  margin: auto 0;               /* vertically center between top & bottom */
   width: 22px;
   height: 22px;
   border-radius: 999px;
@@ -175,18 +181,18 @@
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.9rem;
   line-height: 1;
-  display: none;
+  display: none;                /* shown only when there's text */
   align-items: center;
   justify-content: center;
   padding: 0;
   cursor: pointer;
 }
 
+.clear-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
 
-    .clear-btn:focus-visible {
-      outline: 2px solid #ffffff;
-      outline-offset: 2px;
-    }
 
     .hint {
       font-size: 0.72rem;
@@ -328,23 +334,28 @@
         <section class="controls" aria-live="polite">
           <!-- Search field -->
           <div class="field" id="panel-search">
-            <label for="searchInput">Search guests</label>
-            <input
-              id="searchInput"
-              type="text"
-              placeholder="Type first name, last name, or company…"
-              autocomplete="off"
-            />
-            <button
-              type="button"
-              id="clearSearch"
-              class="clear-btn"
-              aria-label="Clear search"
-            >
-              ×
-            </button>
-            <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
-          </div>
+  <label for="searchInput">Search guests</label>
+
+  <div class="input-shell">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Type first name, last name, or company…"
+      autocomplete="off"
+    />
+    <button
+      type="button"
+      id="clearSearch"
+      class="clear-btn"
+      aria-label="Clear search"
+    >
+      ×
+    </button>
+  </div>
+
+  <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
+</div>
+
 
 
           <!-- Table dropdown -->
