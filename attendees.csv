@@ -1,146 +1,770 @@
 First Name,Last Name,Company,Table
-Julia,Vila,Julia Vilka Beauty and Skin Salon,1
-Sarah,Clark,Julia Vilka Beauty and Skin Salon,1
-Rebecca,Phelan,Julia Vilka Beauty and Skin Salon,1
-Jade,O'Brien,Julia Vilka Beauty and Skin Salon,1
-Laura,Barnwell,Julia Vilka Beauty and Skin Salon,1
-Therese,Casey,Julia Vilka Beauty and Skin Salon,1
-Ciaran,Cannon,The Hair Artist,1
-Barbara ,Neary,The Hair Artist,1
-Joan Marie,Pierce,Kerry Skin & Laser Clinic,1
-Ella ,Pierce,Kerry Skin & Laser Clinic,1
-Joanne,Murphy,Kerry Skin & Laser Clinic,1
-Sophia,Woods,The Facialist,1
-Olga,Kochlewska,Skin by Olga,2
-Tomasz,Pietruniewicz,Skin by Olga,2
-Natalia,Grzegory,Skin by Olga,2
-Katarina,Fabinger-Hanzek,Skin by Olga,2
-Emma,King,Emma K Creative Styling,2
-Aisling,Byrne,Emma K Creative Styling,2
-Elaine,Kavanagh,Emma K Creative Styling,2
-Shane,Carter,Center Parcs,2
-Marie,Doyle,Center Parcs,2
-Chloe,Harvey,Center Parcs,2
-Charlene,Flanagan,Ella & Jo,2
-Niamh,Ryan,Ella & Jo,2
-Richard,Keaveney,Peter Mark,3
-Ashling,Kilduff,Peter Mark,3
-Cathal,Keaveney,Style Club,3
-Tracey,Rafter,Peter Mark,3
-Kelley,Mulholland,Peter Mark,3
-Kon,Kelly,Peter Mark,3
-Holly,O'Keeffe,Peter Mark,3
-Marien,Roberts,"Kon Kelly | Peter Mark",3
-Emer,Kelly,"Kon Kelly | Peter Mark",3
-Niall,Roberts,"Kon Kelly | Peter Mark",3
-Caoimhe,Sibbald,"Kon Kelly | Peter Mark",3
-Ross,McNulty,"Kon Kelly | Peter Mark",3
-Karl,Farrell,Peter Mark,4
-Rebecca,Byas,Peter Mark,4
-Marco,Dias,The Studio by Marco Dias,4
-Leonardo ,Sordini,The Studio by Marco Dias,4
-Sayonara,Lopes,The Studio by Marco Dias,4
-Jaz,McGrath,The Studio by Marco Dias,4
-Milana,Orlovic,Velvære Spa,4
-Irene,Scott,Velvære Spa,4
-Milana,Orlovic Guest,Velvære Spa,4
-Margaret,O'Rourke Doherty,Skillnet,4
-Grainne,Callaghan,Skillnet,4
-Caroline,Newton,Skillnet,4
-Emily,Mcdonald,Bella & Me,5
-Mary,Walshe,Bella & Me,5
-Shauna,Mills,Bella & Me,5
-Maree,McKenna,Bella & Me,5
-Laura,Larkin,Bella & Me,5
-Julie,Noonan,Bella & Me,5
-Katie,Edmonds,Bella & Me,5
-Aislinn,Mcnicoll,Bella & Me,5
-Aileen,O'Sullivan,Bella & Me,5
-Rhianna,Fynes,Fyne Beauty,5
-Daryl,Creedy,Fyne Beauty,5
-Joan,Mulligan,Fyne Beauty,5
-Cliodhna,Weafer Lis,,6
-Danielle,Crowley,,6
-Katie,Tormey,,6
-Jocelyn,Sheridan,,6
-Mary,Morris,Essentials Beauty and Skincare Clinic,6
-Cathy,Steau,Essentials Beauty and Skincare Clinic,6
-Agnes,Gajewska,Essentials Beauty and Skincare Clinic,6
-Nicola,Conroy,Essentials Beauty and Skincare Clinic,6
-Christine,Byrne,Cedarwood Spa at Wineport Lodge,6
-Nicola,Igoe,Cedarwood Spa at Wineport Lodge,6
-Sheila,Crowe,Farnham Estate,6
-Urszula,Kocurkiewic,Farnham Estate,6
-Pamela,Kiely,PK Marketing,7
-Sarah,McGarry,,7
-Yvie,O'Toole,Monroe Recruitment,7
-Grace,Mc Grane,Monroe Recruitment,7
-Gemma,Kilbane,The Hair Fixer,7
-Tara,Kilbane,The Hair Fixer,7
-Siobhan,Kilbane,The Hair Fixer,7
-Leah ,Reilly,The Hair Fixer,7
-Joy,Hawkridge,The Hair Fixer,7
-Stephanie,Maher,The Sober Colourist,7
-Lynn,Morrissey,The Sober Colourist,7
-Gabrielle ,Carey,The Sober Colourist,7
-Deirdre,O'Dowd,Therapie Clinic,8
-Sophia,Forde,Therapie Clinic,8
-Niamh,Kelleher,Therapie Clinic,8
-Joanne,Nolan,Therapie Clinic,8
-Shona,Gavin,Therapie Clinic,8
-Will,Irwin,Therapie Clinic,8
-Maire,Crowe,Therapie Clinic,8
-Sophie,Haine,Therapie Clinic,8
-Ruaa,Elhelali,Therapie Clinic,8
-Kristin,Nason,Therapie Clinic,8
-Sinead,Hynes,Therapie Clinic,8
-Lisa,Rohan,Therapie Clinic,8
-Roy,Leigh,,9
-Sophie,Mason,,9
-Naomi,Mooney,,9
-Lauren,O'Connell,,9
-Bref,Keogh,,9
-Rach,Acton,,9
-Cara,Macken,,9
-Pamela,Brennan,,9
-Nicole,Kelly,,9
-Shauna,Lynch,,9
-Elayne,Lynch,,9
-Fernando,Palma,,9
-Danielle,Smyth,,9
-Jennifer,Rock,The Skin Nerd,10
-Jill,Deering,The Skin Nerd,10
-Niamh,Walshe,The Skin Nerd,10
-Aoife,Gallagher,The Skin Nerd,10
-Rosie,Johnson,The Skin Nerd,10
-Laura,Dowling,The Skin Nerd,10
-Deirdre,Fitzgerald,Fitzgerald Private Clinic,10
-Justin,Gilmartin,Fitzgerald Private Clinic,10
-Noelle,McCrory,Fitzgerald Private Clinic,10
-Lorcan,Hynes,Fitzgerald Private Clinic,10
-Sarah,Gaynor,Polished,10
-Jo ,Simpson,Polished,10
-Nicola,O'Byrne,The Skin Nurse,11
-Louise,Hempenstall,The Skin Nurse,11
-Caroline,Slator,The Skin Nurse,11
-Jeannine,Rey,The Skin Nurse,11
-Miriam,Bennett,The Skin Nurse,11
-Oonagh,McClean,The Skin Nurse,11
-Wendy,Tyner,The Skin Nurse,11
-Sara,Sertic,The Skin Nurse,11
-Jean,Heyraud,The Skin Nurse,11
-Anna,Gunning,The Skin Nurse,11
-Cece,Maher,Platinum Expert Hair,12
-Onagh,Chira,Platinum Expert Hair,12
-Paulie,Chira,Platinum Expert Hair,12
-Shane,Somers,Platinum Expert Hair,12
-Emma,O'Reilly,Platinum Expert Hair,12
-Emma,Kelly,Platinum Expert Hair,12
-Aoife,Lyons,Platinum Expert Hair,12
-Katelyn,O'Brien,Platinum Expert Hair,12
-Caoimhe,O'Reilly,Platinum Expert Hair,12
-Lauren,Lacey,Platinum Expert Hair,12
-Kelly,Chira,Platinum Expert Hair,12
-Chloe,Fuller,Platinum Expert Hair,12
-Sarah,Maher,Platinum Expert Hair,12
-Alec,Ward,Platinum Expert Hair,12
+Michelle,Regazzoli Stone,Mrs Glam,1
+Mark,Stone ,Mrs Glam,1
+Louise ,Regazzoli,Mrs Glam,1
+Selina ,Regazzoli ,Mrs Glam,1
+Claire ,McKenna ,Mrs Glam,1
+April ,Walsh ,Mrs Glam,1
+Gill,O'Toole,Mrs Glam,1
+Debbie,Burdis,Debbie Burdis,1
+Suzie ,Kinnear,Debbie Burdis,1
+Jodie,Farrell,Debbie Burdis,1
+Emma,Furlong,Blink Lashes Gorey,2
+Kate,Mythen,Blink Lashes Gorey,2
+Elaine,Armstrong,Elaine Armstrong,2
+Ciara,McHale,Elaine Armstrong,2
+Kate,Curley,Dazzle Hood,2
+Eva,Khalitova,Dazzle Hood,2
+Elaine,Kavanagh,Elaine Kavanagh,2
+Lily,Kennedy,Elaine Kavanagh,2
+Hilary,Harris,Brookes & Co Spa (Glasson Lakehouse),2
+Niamh,McKiernan,Brookes & Co Spa (Glasson Lakehouse),2
+Melissa,Ferguson,Voza Skin,2
+Tim,Ferguson,Voza Skin,2
+Breda,O'Neill,Beauty Box 63 / The Gel Bottle,3
+Laura,Oglesby,Beauty Box 63 / The Gel Bottle,3
+Brenda,Molloy Rothwell,Beauty Box 63 / The Gel Bottle,3
+James,Rothwell,Beauty Box 63 / The Gel Bottle,3
+Rose,Molloy,Beauty Box 63 / The Gel Bottle,3
+Robert,Molloy,Beauty Box 63 / The Gel Bottle,3
+Thomas,Molloy,Beauty Box 63 / The Gel Bottle,3
+Anna,Molloy,Beauty Box 63 / The Gel Bottle,3
+Aoife,Revins,Kopper Hair Salon,3
+Lisa,Murphy,Kopper Hair Salon,3
+Becka,Long,Kopper Hair Salon,3
+Charlene,Murphy,Kopper Hair Salon,3
+Elzbieta ,Urbanowicz ,Merrion Spa,4
+Ines ,Kosorcic,Merrion Spa,4
+Lorraine ,Tubridy,Lorraine Tubridy,4
+Mary ,Tubridy ,Lorraine Tubridy,4
+Rachel ,Farrell ,Vida Hair Design,4
+Sarah,Nugent,Vida Hair Design,4
+Lydia ,Sasse,Face Yoga with Lydia,4
+Marlena ,Murphy,Face Yoga with Lydia,4
+Donna ,O'Toole,Bohemian Beauty,4
+Paige ,Comerford,Bohemian Beauty,4
+Pamela ,Morrissey ,Sobe Brown,4
+Stephen,Hennessy,Sobe Brown,4
+Emily ,Whelan,"MD Hair Salon, Carlow",5
+Meg ,Farrell,"MD Hair Salon, Carlow",5
+Catherine ,Waters,Complete Laser Care,5
+Helena ,Ryan,Complete Laser Care,5
+Karen,Broderick,Beyond Beauty Galway,5
+Cathal,Cassidy,Beyond Beauty Galway,5
+Gary,Malone,Brushdoc,5
+Ciara,Malone,Brushdoc,5
+Nicola,Nolan,ND Skin & Beauty,5
+Ciara,Nolan,ND Skin & Beauty,5
+Aisling, Dowling,"Aisling Amelia, MUA",5
+Jemima,Whyte,"Aisling Amelia, MUA",5
+Maria,Whiting,Maria Whiting,6
+Deborah ,De Courcy,Maria Whiting,6
+Niamh ,O’Carroll,Niamh O’Carroll,6
+Marah,Curtin,Niamh O’Carroll,6
+Gary ,Kehoe,HOUSE Hair Studio,6
+"Bryan 
+",Murphy ,HOUSE Hair Studio,6
+Emma ,Power,HOUSE Hair Studio,6
+Brendan, Molloy ,South William Clinic,6
+Joseph, Blanco,South William Clinic,6
+Alexandra ,Olaru,South William Clinic,6
+Jessica,Bowes,South William Clinic,6
+Luke,Nolan,Lukey Lukey Beauty,7
+Brian,Higgins,Galway Skin Clinic,7
+Eva,Higgins,Galway Skin Clinic,7
+Maria,Melia,Galway Skin Clinic,7
+Rebecca,Gannon,Galway Skin Clinic,7
+Stephen,O Rourke,Galway Skin Clinic,7
+Ali,O Rourke,Galway Skin Clinic,7
+Chloe,Jones,Aqua Sana Forest Spa / Center Parcs,7
+Jess,Gardner,Aqua Sana Forest Spa / Center Parcs,7
+Shane,Carter,Aqua Sana Forest Spa / Center Parcs,7
+Jennifer,Halford,Aqua Sana Forest Spa / Center Parcs,7
+Fiona,O'Keefe,Aqua Sana Forest Spa / Center Parcs,7
+Giedrė J.,Vasiliauske ,Fifth Avenue Boutique,8
+Jurgita ,Leonoviene ,Fifth Avenue Boutique,8
+Juneta ,Kojuhari,Fifth Avenue Boutique,8
+David,Drew,Primark,8
+Careen, Farrell,Primark,8
+Elaine ,Foss ,Primark,8
+Suzanne,Cummins,14 Day Manicure,8
+Tim,Cummins,14 Day Manicure,8
+Fiona,McCarthy,14 Day Manicure,8
+Jasmine,Slattery,14 Day Manicure,8
+Niamh,Alexander,14 Day Manicure,8
+Donagh,Quigley,Handmade Soap Company,8
+Keara,Lennon,Face Brow Bar,9
+Aisling ,Scarnicchio,Face Brow Bar,9
+Jien ,Thum,Face Brow Bar,9
+Amy ,Bracken,Face Brow Bar,9
+Amy ,Forbes,Face Brow Bar,9
+Aleksandra ,Dybowicz,Face Brow Bar,9
+Aisling,Fitzgerald,Mediskin,9
+Leanne,Coen,Mediskin,9
+Emma,Flannery,Mediskin,9
+Heather,Slattery,Mediskin,9
+Searlait,Quinn,Mediskin,9
+Nicola,Taylor,Mediskin,9
+Bernadette,Byrnes,HairPeople,10
+Jennifer,Zamparelli,HairPeople,10
+Erin,Heiniger,HairPeople,10
+Eden,Byrnes,HairPeople,10
+Kai,Teixeira,HairPeople,10
+Robyn,Deery,HairPeople,10
+Marcella,Goes,HairPeople,10
+Danielle,Mahon,HairPeople,10
+Shauna,Lawlor,HairPeople,10
+Paula,Hughes,Essentials Beauty,10
+Nikolette,Zemen,Essentials Beauty,10
+Agnes, Gajewska,Agnes Gajewska,10
+Rachel,Maguire,Lucy Gaffney,11
+Lauren,Whelan,Lucy Gaffney,11
+Holly,Roche,Lucy Gaffney,11
+Corinna,Tolan,Monica Tolan,11
+Grace,O Connor,Monica Tolan,11
+Shannen,Reilly McGrath,Monica Tolan,11
+Aoife,Boyle,Aoife Boyle,11
+Bernie,Boyle,Aoife Boyle,11
+Tomosina,Boyle,Aoife Boyle,11
+Corina,Laur,Corina Laur,11
+Shannon,McCreery,IMAGE Skincare,11
+Sharon,Brady,IMAGE Skincare,11
+Aine,Kennedy,The Smooth Company,12
+Eimear,Kennedy,The Smooth Company,12
+Billy,Kennedy,The Smooth Company,12
+Rebekah,Caulfield,The Smooth Company,12
+Cara,Kennedy,The Smooth Company,12
+Emma,Shiels,The Smooth Company,12
+Emma,Hughes,The Smooth Company,12
+Karen,Duffy,The Smooth Company,12
+Lisa,Mulhall,The Smooth Company,12
+Jenny,McNulty,The Smooth Company,12
+Onagh,Chira,Platinum Hair Extensions,13
+Paul,Chira,Platinum Hair Extensions,13
+Shane,Somers,Platinum Hair Extensions,13
+Ross,Keogh,Platinum Hair Extensions,13
+Kelly,Chira,Platinum Hair Extensions,13
+Dara,Mooney,Platinum Hair Extensions,13
+Katelyn,O’Brien,Platinum Hair Extensions,13
+Rebecca,Burns,Platinum Hair Extensions,13
+Shauna,Mccarthy,Platinum Hair Extensions,13
+Dionne,Curtis,Platinum Hair Extensions,13
+Caoimhe,Donoghue,Doctrine Skincare ,14
+Tracey,Ryan,Doctrine Skincare ,14
+Mark,O'Sullivan,Doctrine Skincare ,14
+Sinead,Asple,Sea + Solu,14
+Susan,Fox,Ealu,14
+Claire,Fullam,Remi,14
+Ian,O’Beirne,Remi,14
+Jo,Browne,Jo Browne,14
+Pat,O'Connor,Jo Browne,14
+Dizon Jade B. ,Egca,FILO,14
+Mary Christina ,Lumor,FILO,14
+Ryan ,Lumor,FILO,14
+Laura,Dowling,FABU,15
+Frank,Dowling,FABU,15
+Geri,Mulvany,FABU,15
+Muireann,O Connell,FABU,15
+Tara,Keane,FABU,15
+Rachael,Shotunde,FABU,15
+Connie,Whelan,FABU,15
+Lauren,Hennessey,FABU,15
+Feargal,Hoey,FABU,15
+Jennifer,Rock,FABU,15
+Jill,Deering,FABU,15
+Caoimhe,McGinley,FABU,15
+Eavanna,Breen,Eavanna Breen,16
+Georgie,Crawford,Eavanna Breen,16
+Gelnda,Gilson,Eavanna Breen,16
+Thalia,Heffernan,Eavanna Breen,16
+Nicola,Rush,Eavanna Breen,16
+Karen,Connolly,Eavanna Breen,16
+Ernesta,Drobuzyte,Eavanna Breen,16
+Lorna,Murphy,Monart,16
+Mark,Browne,Monart,16
+Amy,Kenny,Monart,16
+Pamela,Nolan,Monart,16
+Tara,Mae,Tara Mae,16
+Ceira,Lambert,Ceira Lambert,17
+Abbi,Lambert,Ceira Lambert,17
+Nicole,Ahnert,Ceira Lambert,17
+Lyn,King,Ceira Lambert,17
+Anne-Marie,Lynch,Ceira Lambert,17
+Kristina,Cosgrave,Ceira Lambert,17
+Abbie,Lee,Ceira Lambert,17
+Chloe,O Reilly,Ceira Lambert,17
+Jade,Doyle,Ceira Lambert,17
+Andrada,Tabara,Ceira Lambert,17
+Muireann,Breathnach,Ceira Lambert,17
+Francesca,O'Brien,Ceira Lambert,17
+Anna,Hosty,Yourrells,18
+Laura,Curren Hanley,Yourrells,18
+Aimee,Woods,Brows by Aimee,18
+Clodagh,Donnelly,Brows by Aimee,18
+Zoe,Madigan,CurlyCo,18
+Denise,Walsh,CurlyCo,18
+Natalie,O'Brien,Natalie O'Brien Bridal Hair,18
+Jonny,O'Brien,Natalie O'Brien Bridal Hair,18
+,,Revive Active,18
+,,Revive Active,18
+Orla,O'Donohoe,Third Eye Beauty,18
+Niamh,Costello,Third Eye Beauty,18
+Ellen,Kavanagh Jones,Waxperts,19
+Conrad,Jones,Waxperts,19
+Aoife,Harris,Waxperts,19
+Shona,Brown,Waxperts,19
+Ellen,Doyle,Waxperts,19
+Erika,Jones,Waxperts,19
+Sarah,Bergin,Waxperts,19
+Chris,Devine,HAIR | Chris Devine,19
+Ian,Roberts,HAIR | Chris Devine,19
+Amy,Devine,HAIR | Chris Devine,19
+Lyndsey,Shanley,HAIR | Chris Devine,19
+Leah,Colsh,HAIR | Chris Devine,19
+Claire,Wright,Ceira Lambert,20
+Caitlin,Mitchell,Ceira Lambert,20
+Ellie,Minto Ilaria,Ceira Lambert,20
+Ilaria Borza,Borza,Ceira Lambert,20
+Hanifa,Arif,Fifi Nails,20
+Carla,Arif,Fifi Nails,20
+Laila,Arif,Fifi Nails,20
+Anna,Muldowney,Peach Beauty & Skin Clinic,20
+Niamh,Casserly,Peach Beauty & Skin Clinic,20
+Jenny,Coyle Curran,Peach Beauty & Skin Clinic,20
+Grace,Dunne,Grace Dunne Makeup & Mobile Tan,20
+Harriet,Wen Jing Zhang,Nails by Harriet,20
+Joyce,Porto,Rob Kenny PR,21
+Triona,McCarthy,Rob Kenny PR,21
+Ashley,Kehoe,Rob Kenny PR,21
+Jess,Colivet,Rob Kenny PR,21
+Louise,Duffy,Rob Kenny PR,21
+Louise,McSharry,Rob Kenny PR,21
+Shauna,Lindsay,Rob Kenny PR,21
+Rob,Kenny,Rob Kenny PR,21
+Billy,Bunzari,Rob Kenny PR,21
+Mark,Walton,Rob Kenny PR,21
+Kira,Walton,Rob Kenny PR,21
+Caroline,Cullen,Rob Kenny PR,21
+Carmel,Treacy,FIAT,22
+Dominika ,Szwajca,FIAT,22
+Bernie,Kennan,FIAT,22
+John ,Saunders,FIAT,22
+Brenda,Saunders,FIAT,22
+Claire,Conlon,FIAT,22
+Maria ,Bourke,FIAT,22
+Catherine,Tiernan,FIAT,22
+Sarah,Lavin,FIAT,22
+Kate ,O'Connor,FIAT,22
+Erin,King,FIAT,22
+Emma,Burke,FIAT,22
+Margaret,O’Rourke Doherty,Image Skillnet,23
+Anna,Doherty,Image Skillnet,23
+Aimee,Doherty,Image Skillnet,23
+Caroline,Newton,Image Skillnet,23
+Nicola,Lawless,Image Skillnet,23
+Aisling,O’Leary,Image Skillnet,23
+Anita,Murray,Image Skillnet,23
+Grainne,O’Callaghan,Image Skillnet,23
+Laila,Sergejeva,Image Skillnet,23
+Mohammed,Isaac,Image Skillnet,23
+Olivia,Kett,FIAT,24
+Chloe,O'Donnell,FIAT,24
+Nicola,Murphy,FIAT,24
+Linda,Reynolds,FIAT,24
+Ciaran,Cusack,FIAT,24
+Rossagh,Cusack,FIAT,24
+Orla,Tolan,FIAT,24
+Orna,Thompson,FIAT,24
+Aedeen,Linnane,FIAT,24
+Emily,Wicks,FIAT,24
+Shauna,Reade,FIAT,24
+Stephanie,Neary-Garcia,FIAT,24
+Claire,Quinn,FIAT,25
+Niamh,Flynn,FIAT,25
+Nicole,Gibbs,FIAT,25
+Orla,Flynn,FIAT,25
+Amrutha,Soman,FIAT,25
+Jack,Malone,FIAT,25
+Clodagh,Walsh,FIAT,25
+Linda,Meehan-Ashton,FIAT,25
+Leah,Morgan,FIAT,25
+Jodie,Dodrill,FIAT,25
+Sinead,Magee,FIAT,25
+Katelyn-Rose,Slevin,FIAT,25
+Pippa,O'Connor Ormond,Poco Beauty,26
+Brian,Ormond,Poco Beauty,26
+Alan,McGovern,Poco Beauty,26
+Tara,O'Connor,Poco Beauty,26
+Nicola,Gill,Poco Beauty,26
+Aoife,Sheehan,Poco Beauty,26
+Pamela,Laird,Poco Beauty,26
+Rachel,Hall,Poco Beauty,26
+Aimee,Prizeman,Poco Beauty,26
+Simone,Canavan,Poco Beauty,26
+Rachel,Donnelly,Poco Beauty,26
+Sarah,Dicker,Poco Beauty,26
+Celine,Slamon,Roy Leigh,27
+Roy,Leigh,Roy Leigh,27
+Elayne,Lynch,Roy Leigh,27
+Lauren,O'Connell,Roy Leigh,27
+Abigail,Delaney,Roy Leigh,27
+Shakira,Clohessy,Roy Leigh,27
+Lou,Merryweather,Roy Leigh,27
+Breifne,Keogh,Breifne Keogh,27
+Lisa,O'Brien,Breifne Keogh,27
+Tracy,Clare,Breifne Keogh,27
+Ciara,Doyle,Breifne Keogh,27
+Helena,McMahon,Seabody,27
+Anita,Kucsera,Annutri,28
+Steve,Kucsera,Annutri,28
+Leanne,Slattery,Annutri,28
+Lotus,Dequina,Annutri,28
+Aoife,Brady ,Hair Café,28
+Gwen ,Connell,Hair Café,28
+Kelly ,O’Gorman,Hair Café,28
+Daniel,Sheridan,Hair Café,28
+Valerie,Philips ,Hair Café,28
+Lynn ,Kathleen,Hair Café,28
+Bill,O'Sullivan,IMAGE Media,28
+Karen,Bell,IMAGE Media,28
+Ciara,Swan,L'Oreal,29
+Miriam,O’Connor Meade,L'Oreal,29
+Dermot,McMahon,L'Oreal,29
+Laura,Carroll,L'Oreal,29
+Paul,Brady,L'Oreal,29
+Nikita,Purdy,L'Oreal,29
+Shauna,Forman,L'Oreal,29
+Joanne,Smith,L'Oreal,29
+Kate,Elmes,L'Oreal,29
+Johanna,Cullen,L'Oreal,29
+Denise,Phillips,Voduz,30
+Mark,Phillips,Voduz,30
+Erin,McGregor,Voduz,30
+Nimah,Lawless,Voduz,30
+Lauren,Gavigan,Voduz,30
+Denise,Culleton,Voduz,30
+Chelsea,Harrington,Voduz,30
+Sarah,Burke,Voduz,30
+Sophie,McGuinness,Voduz,30
+Lucy,Black,Voduz,30
+Chloe,Kett,Freixenet,31
+Rebecca,Kett,Freixenet,31
+Jodie,Waters,Freixenet,31
+Mary,Moriarty,Freixenet,31
+Edel,McGreal,Freixenet,31
+Lorraine,Connolly,Freixenet,31
+Helen,O'Connor,Freixenet,31
+Holly,Glasgow,Freixenet,31
+Aislinn,Haughton,Freixenet,31
+Kaitlyn,Mayon,Freixenet,31
+Ed,Corkery,TBM Solutions,32
+Fiona,Corkery,TBM Solutions,32
+Elsie,Corkery,TBM Solutions,32
+Alan,Eustace,TBM Solutions,32
+Ciara,Eustace,TBM Solutions,32
+Daisy,Kelly,TBM Solutions,32
+Jonjo,Coops,TBM Solutions,32
+Katey,McIlroy,TBM Solutions,32
+Ciara,McLoughlin,TBM Solutions,32
+Barry,McLean,TBM Solutions,32
+Fiona,Thomas,Shark Beauty,33
+Suzanne,Daly,Shark Beauty,33
+Laura,Kenny,Shark Beauty,33
+Susan,Case,Shark Beauty,33
+Ken,Glynn,Shark Beauty,33
+Paula,Mendes,Shark Beauty,33
+Meg,Foley,Shark Beauty,33
+Elaine,Langton,Shark Beauty,33
+Gilliane,Quinn de Schonen,Shark Beauty,33
+Eileen,McHugh,Shark Beauty,33
+Carmel,Breheny,Cocoa Brown,34
+Marissa,Carter,Cocoa Brown,34
+Arlene,Costelloe,Cocoa Brown,34
+Rosanna,Davison,Cocoa Brown,34
+Zara,Deasy,Cocoa Brown,34
+Karen,Dempsey,Cocoa Brown,34
+Michelle,Fitzpatrick,Cocoa Brown,34
+Roisín,O’Donnell,Cocoa Brown,34
+Sarah,Rickard,Cocoa Brown,34
+Rebecca,Horan,Cocoa Brown,34
+Niamh,Martin,Malfy,35
+Emma,McEvoy,Malfy,35
+Siobhan,McAuley,Malfy,35
+Byron,McAuley,Malfy,35
+Lisa,O'Sullivan Shaw,Malfy,35
+Eadaoin,Fitzmaurice,Malfy,35
+Aisling,Chan,Malfy,35
+Emma,Waldron,Malfy,35
+Tanya,Gaby,Malfy,35
+Donna Marie,Cullen,Malfy,35
+Haryanna,Alencar,Moloney & Kelly,36
+Roisin,Farrell,Moloney & Kelly,36
+Rebekah,Evans,Abbey Conference,36
+Claire,Devine,Abbey Conference,36
+Emma,Hester,Business Post,36
+Sadhbh,O’Hanlon,,36
+Laura,Doyle,Grooveyard,36
+Niamh,O’Regan,National Beauty,36
+Ciara,O’Dowling,National Beauty,36
+Shannon,Cullinan,Sound to Light,36
+Aimee,Connolly,Sculpted by Aimee,37
+Rachel,Lenny,Sculpted by Aimee,37
+Lisa,Ryan,Sculpted by Aimee,37
+Charlotte,Deegan,Sculpted by Aimee,37
+Leah,Sheridan,Sculpted by Aimee,37
+Mark,Rogers,Mark Rogers,37
+Enya,Fitzgerald,Mark Rogers,37
+Katie,Tiernan,Mark Rogers,37
+Ellen,Malone,Mark Rogers,37
+Carol,Byrne,Mark Rogers,37
+Laura,Dignam,Burgundy Beauty,38
+Paul,Dignam,Burgundy Beauty,38
+Deirdre,McLoughlin,Burgundy Beauty,38
+Michelle,Verhoeven,Burgundy Beauty,38
+Ciara,Nolan,Burgundy Beauty,38
+Bronagh,Nolan,Burgundy Beauty,38
+Orla,McCormack,Burgundy Beauty,38
+Niamh,Carty,Burgundy Beauty,38
+Anastasia,Fil,Burgundy Beauty,38
+Alisha,ODowd,Burgundy Beauty,38
+Julia,Kolasa,C Beauty,39
+Claire,Ryan,C Beauty,39
+Catherine,Reid,C Beauty,39
+Liz,Samuel,C Beauty,39
+Demi,Battulga,C Beauty,39
+Anna,Agvaantogtokh,C Beauty,39
+Natalia,Kanunnikova,C Beauty,39
+Khundaga,Davaadorj,C Beauty,39
+Leonie,Lynch,Juspy,39
+Emily,Ross,Juspy,39
+Sharon,McMeel,Juspy,39
+Dolores,McMeel,Juspy,39
+James,Patrice,Hildun Beauty,40
+Suzy,Griffin Dunne,Hildun Beauty,40
+Clodagh,Staunton,Spray South,40
+Johanna,Kane,Spray South,40
+Kylie,O'Donoghue,FemFuelz,40
+Paula,O'Donoghue,FemFuelz,40
+Jennifer,Woods,Elave,40
+Tom,Gardiner,Elave,40
+Anna,Forde,Haumea Skincare,40
+Lorna,Gilmartin,Haumea Skincare,40
+Ellie,Fay,The Space,40
+Shelly,Duggan,The Space,40
+Gretta,Doyle,Powerscourt Hotel,41
+Tracey,Carney,Pride of Place Awards ,41
+Michelle,Thornton,Hotel Solutions ,41
+Jeff,Thornton,Hotel Solutions ,41
+Dani,Hadley,Sound to Light,41
+Niamh,O'Donoghue,House,41
+Nichola,Hughes,House,41
+Lucy,Warnock,House,41
+Tony,Brennan,House,41
+Heather,Condren,Flowerpoop,41
+Grace,Cahill,Flowerpoop,41
+Sophie,Power,IMAGE Media,41
+Linda,Nolan,Boots,42
+Avril,Farrell,Boots,42
+Julianne,Forrestal,Boots,42
+Mark,Sweeney,Boots,42
+Debbie,O’Donnell,Boots,42
+Lisa,Shannon,Boots,42
+Davina,Devine,Boots,42
+Lisa,Byrne,Boots,42
+Angelina,Ball,Boots,42
+Heidi,Morgan,Boots,42
+Susan,Grant,Boots,42
+Kirsten,Lyons,PwC,43
+Sharon,Fuller,PwC,43
+Caoimhe,Mulrey,PwC,43
+Doireann,Murray,IMAGE Media,43
+Macial,Barroskosek,,43
+Artur,Barroskosek,,43
+Melanie,Morris,IMAGE Media,43
+Darren,Kennedy,,43
+Norman,Pratt,,43
+Julio,Gray Sartori,IMAGE Media,43
+Paul,Gray Sartori,IMAGE Media,43
+Kwanele,Nomoyi,Google,43
+Kweya,Albert,Google,43
+Amy,Buckeridge,Publicity Loft,44
+Alison,O'Hanlon,Publicity Loft,44
+Carragh,Meaney,Publicity Loft,44
+Aideen,O'Connell,Publicity Loft,44
+Karen,Constantine,Publicity Loft,44
+Jules,Fallon,Publicity Loft,44
+Tracey,Furley,Publicity Loft,44
+Hazel,Conroy,Publicity Loft,44
+Jennifer,O'Brien,Publicity Loft,44
+Emma,King,Publicity Loft,44
+Meg,O’Keeffe-Doyle,Brown Sugar,45
+Mark,O’Keeffe,Brown Sugar,45
+Christian,Shannon,Brown Sugar,45
+John,Bowes,Brown Sugar,45
+Eilis,Downey,Brown Sugar,45
+Casey,Iveagh,Brown Sugar,45
+Charlie,O’Keeffe,Brown Sugar,45
+Emma,Lawless,Brown Sugar,45
+Emma,Jennings,Brown Sugar,45
+Aoife,King,Brown Sugar,45
+Monique,Carrick,Brown Sugar,45
+Robyn,Bernard,Brown Sugar,45
+Kerry,Hanaphy,Kerry Hanaphy,45
+Keilidh,Cashell,KASH Beauty,46
+Darren,Kavanagh,KASH Beauty,46
+Conor,Cochrane,KASH Beauty,46
+Sarah,Kiernan,KASH Beauty,46
+Chloe,Koyce,Chloe Koyce,46
+Luke,Kelly,Chloe Koyce,46
+Miriam,Costello,Enchant,46
+Lauren,Egerton,Lauren Egerton,46
+Naomi,Kehoe,Millies,46
+Edele,Murray,Millies,46
+Pamela,Hamilton,Millies,46
+Jessica,Murphy,Millies,46
+Michelle,Hone,Herology,47
+Darragh,Canavan,Herology,47
+Sarah,Kelly,Herology,47
+Paddy,Kelly,Herology,47
+Alanna,Kelly,Herology,47
+Colm,Smyth,Herology,47
+Ciara,Kelly,Herology,47
+Daniel,O'Reilly,Herology,47
+Bronagh,Hughes,Herology,47
+Bernie,Hone,Herology,47
+Elaine,Taylor,Herology,47
+Ross,Tracy,Facial Rejuve,48
+Altona,Myers,Facial Rejuve,48
+Simone,Kelly,Facial Rejuve,48
+Graham,Kelly,Facial Rejuve,48
+Grace,Daly,Facial Rejuve,48
+Leanne,O’Houlihan,Facial Rejuve,48
+Laura,O’Sullivan,Facial Rejuve,48
+Donna,McGill,Facial Rejuve,48
+Ruth,Hanlon,Facial Rejuve,48
+Caroline,Giles,Facial Rejuve,48
+David,Fay,Facial Rejuve,48
+Hugh,Gleeson,Facial Rejuve,48
+Sarah,O’Reilly,AYU,49
+Gillian,Duffy,AYU,49
+Annmarie,Carey,AYU,49
+Hazel,O’Donoghue,AYU,49
+Caroline,O’Keeffe,AYU,49
+Reina,Dombrovska,AYU,49
+Alix,Weld,AYU,49
+Sarah,Quinn,AYU,49
+Audrey,Nolan,Eden Treatment Rooms,49
+Lenka,Parker,Eden Treatment Rooms,49
+Edel,Conroy,Eden Treatment Rooms,49
+Dave,Treacy,Eden Treatment Rooms,49
+Ciara,Dunne,Allure Beauty,50
+Cliodhna,Weafer Lis,Allure Beauty,50
+Danielle,Crowley,Allure Beauty,50
+Frankie,Conroy,Allure Beauty,50
+Faith,Hilliard,Allure Beauty,50
+Ella,Leonard,Allure Beauty,50
+Eve-ellen,Kavanagh,For Your Eyes Only,50
+Nicola,O Connor,For Your Eyes Only,50
+Mia,Hughes,For Your Eyes Only,50
+Sonia,Power,For Your Eyes Only,50
+Rachel,Curtin,For Your Eyes Only,50
+Heather,Kelly,For Your Eyes Only,50
+Gemma,Kilbane,Gemma Kilbane,51
+Siobhan,kilbane,Gemma Kilbane,51
+Tara,Kilbane,Gemma Kilbane,51
+Lavina,Collins,Ivy Blu Salon,51
+Evette,Corrigan,Ivy Blu Salon,51
+Jane,Woods,Ivy Blu Salon,51
+Aisling,O Connor,Ivy Blu Salon,51
+Niamh,Mc Donal,Ivy Blu Salon,51
+Amy,Carney,Ivy Blu Salon,51
+Sarah,Grehan,Ivy Blu Salon,51
+Jess,Walsh,Ivy Blu Salon,51
+Joanna,Moran,Ashford Castle,51
+Aoife,Mangan,National Beauty,52
+Kieran,Walsh,National Beauty,52
+Jenni,Fenlon,National Beauty,52
+Emily,Whyte,National Beauty,52
+Hannah,Berney,National Beauty,52
+Mary,Kelly,National Beauty,52
+Grainne,O’Regan,National Beauty,52
+Dee,sheehy,National Beauty,52
+Lauren,O’Donovan,National Beauty,52
+Debbie,Barron,National Beauty,52
+Michaela,Hynes,National Beauty,52
+Melissa,Smyth,National Beauty,52
+Zaya,Ganbaatar,Oslo Beauty ,53
+Ana,Prates,Oslo Beauty ,53
+Bruna,Devegili,Oslo Beauty ,53
+Robyn,Klinge Quain,Oslo Beauty ,53
+Traci,Conroy,Oslo Beauty ,53
+Dimitra,Palla,Oslo Beauty ,53
+Mary,Keenan,Bellamianta,53
+Rachel,Neill,Bellamianta,53
+Katie,Mc Quaid,Bellamianta,53
+Aileen,Kerrigan,Bellamianta,53
+Kate,O'Brien,Tropical Popical,53
+Shane,Carroll,Tropical Popical,53
+Nancy,Costello,Belle Brush,54
+Nikita,Delaney,Belle Brush,54
+Eimear,Hough,Belle Brush,54
+Niamh,Cosgrove,Belle Brush,54
+Charlotte,Eldridge,Belle Brush,54
+Fiona,Morris,Follicle,54
+Bruna,Fogo,Follicle,54
+Andrea,Walsh,Don't Kill My Vibe,54
+Anja,Geraghty,Don't Kill My Vibe,54
+Amy,Manley,Amy Manley,54
+Audrey,Cashman,Upstyle Junkie,54
+Theresa,Cashman,Upstyle Junkie,54
+Lizzie,Quinn,Thérapie,55
+Joanne,Nolan,Thérapie,55
+Victoria,Kalandadze,Thérapie,55
+Raymond,Seedhoo,Thérapie,55
+Nicole,Creighton,Thérapie,55
+Cheryl,McClean,Thérapie,55
+Toni,Talbot,Thérapie,55
+Chloe,Redmond,Thérapie,55
+Christina,Banyon,Thérapie,55
+Junglos,De Macedo,Thérapie,55
+Sarah,McMullen,TwoBirds,56
+Erika,O’Donnell,TwoBirds,56
+Shauna,Joyce,TwoBirds,56
+Caroline,Lynch,TwoBirds,56
+Ana,Ruiz Escribano,TwoBirds,56
+Margaret,Hefferan,TwoBirds,56
+Claire,Murray,TwoBirds,56
+Emma,McMahon,TwoBirds,56
+Lisa,Ryan,TwoBirds,56
+,,TwoBirds,56
+Katarina,Fabinger Hanžek,Skin by Olga,57
+Olga,Kochlewska,Skin by Olga,57
+Tomasz,Pietruniewicz,Skin by Olga,57
+Natalia,Grzegory-Marchewka,Skin by Olga,57
+Doireann ,O'Leary,Supplements Made Simple,57
+Grace ,Page,Supplements Made Simple,57
+Sive ,O'Brien,Supplements Made Simple,57
+Caroline ,Dalton,Supplements Made Simple,57
+Michele ,McGrath,Supplements Made Simple,57
+Marie,McDonald Murphy,Supplements Made Simple,57
+Katie ,Henshaw,Supplements Made Simple,57
+Dr. Maire,Treasa Ni Cheallaigh,Supplements Made Simple,57
+Michelle,Kinsella,Michelle Kinsella,58
+Charlene,Flanagan,Ella & Jo,58
+Jenny,Beattie,Ella & Jo,58
+Mary-Claire,Kelly,Mary-Claire Kelly,58
+Emma,Casey,Emma Casey,58
+Kerry,Kelly,"The Castle Spa, Dromoland Castle",58
+Louise,Hassett,"The Castle Spa, Dromoland Castle",58
+Katrina,Kelly,Katrina Kelly Perry,58
+Dina,Clarke,Katrina Kelly Perry,58
+Amy,Mcpartlin,Katrina Kelly Perry,58
+Dara,Mullooly,The Johnstown Estate,58
+Sarah,Glynn,The Johnstown Estate,58
+Paul,Coughlan,Dr Paul Coughlan,59
+Niamh,O'Connor,Dr Paul Coughlan,59
+Siobhan,Macken,Dr Paul Coughlan,59
+Aoife,Coughlan,Dr Paul Coughlan,59
+Tom,Mullally,Dr Paul Coughlan,59
+Catherine,Mullally,Dr Paul Coughlan,59
+Paula,Callan,Dr Paul Coughlan,59
+Michelle,Field,Dr Paul Coughlan,59
+Kim,Murray,Dr Paul Coughlan,59
+Jenny,Dawson,Dr Paul Coughlan,59
+Emma,Martin,Dr Paul Coughlan,59
+Con,Martin,Dr Paul Coughlan,59
+Madeline,Riley,Radisson Blu Royal Hotel ,60
+Irene,Scott,"Velvaere Spa, Radisson Blu Golden Lane",60
+Gillian,Snee,"Velvaere Spa, Radisson Blu Golden Lane",60
+Luna,Deville,"Velvaere Spa, Radisson Blu Golden Lane",60
+Sienna,Tobin,"Velvaere Spa, Radisson Blu Golden Lane",60
+Deirdre,Fitzgerald,Fitzgerald Private Clinic ,60
+Justin,Gilmartin,Fitzgerald Private Clinic ,60
+Noelle,McCrory,Fitzgerald Private Clinic ,60
+Lorcan,Hynes,Fitzgerald Private Clinic ,60
+Geraldine,Jones,Skin Formulas,60
+Emma,Hogan Eyre,Skin Formulas,60
+Adrianna,Dryniewicz,Adrianna Dryniewicz,60
+Ann,Marie Lynam,Ann Marie Lynam,60
+Niamh,Hogan,Holos,61
+Tara,Gilleece,Holos,61
+Anna,O'Connell,Holos,61
+Sally,Foran,Holos,61
+Colin,Horgan,New Hair Order,61
+Lisa,May,New Hair Order,61
+David,Reynolds,New Hair Order,61
+Mark,Byrne,New Hair Order,61
+Aine,O'Flaherty,Beauty Box Spray Tanning,61
+Gavin,O'Flaherty,Beauty Box Spray Tanning,61
+Kellie,Kind,Beauty Box Spray Tanning,61
+James,Kind,Beauty Box Spray Tanning,61
+Jessica,Mullen,Hello Gorgeous Nail & Foot Health,62
+Chris,Mullen,Hello Gorgeous Nail & Foot Health,62
+Rosanna,McEntee,Hello Gorgeous Nail & Foot Health,62
+Rebecca,McKeogh,Hello Gorgeous Nail & Foot Health,62
+Eimear,McGinn,Hello Gorgeous Nail & Foot Health,62
+Karen,Sheehan,ORA Skin Clinic,62
+Sinead,Heasley,ORA Skin Clinic,62
+Edel,Woods,ORA Skin Clinic,62
+Aoife,McGrath,ORA Skin Clinic,62
+Louise,Hawkins,ORA Skin Clinic,62
+Emily,McDonald,Bella & Me,62
+Mary,Walshe,Bella & Me,62
+Lucy,McAllister,Brows by Lue,63
+Emma,Keogh,Brows by Lue,63
+Stephanie,Kee,Brows by Lue,63
+Claire,Ferrari,Brows by Lue,63
+Treasa,Burns,Brows by Lue,63
+Noella,Geoghegan,Brows by Noella,63
+Aishling,McGrath,Aisling McGrath,63
+Alyson,Murphy,Aisling McGrath,63
+Sarah,Collopy,Aisling McGrath,63
+Suzanne,O'Connor,The Brow Boss,63
+Shauna,McKean,The Brow Boss,63
+Elaine,Cruz,Elaine Cruz ,63
+Aaron,Daly,Gloss Nails,64
+Marta,Sandoval,Gloss Nails,64
+Mia,Reynolds,Gloss Nails,64
+Camila,Herrero,Gloss Nails,64
+Gareth,Duffy,Gloss Nails,64
+Rianna,Moore,Luxe Nails and Beauty,64
+Rachel,O'Kelly,Luxe Nails and Beauty,64
+Emma,Kavanagh,Luxe Nails and Beauty,64
+Shannon,Trollip,Luxe Nails and Beauty,64
+Raquel,Herrara,Luxe Nails and Beauty,64
+Isobel,Kearns,Luxe Nails and Beauty,64
+Grace,Murphy,Luxe Nails and Beauty,64
+Paula,Cuddihy,URBANA,65
+Michelle,Bowes,URBANA,65
+Anne,Power,URBANA,65
+Megan,McDonnell,URBANA,65
+Lauren,O'Toole,URBANA,65
+Chloe,Behan,URBANA,65
+Lene,Reardon,URBANA,65
+Leah,Murphy,URBANA,65
+Harriet,Smyth,URBANA,65
+Kara,Scully,URBANA,65
+Eimear,Mallon,URBANA,65
+Emilia,Carandino,URBANA,65
+Emer,Lawless,URBANA,66
+Jenny,Broughan,URBANA,66
+Yaiza,Alonso,URBANA,66
+Khloe,Kelly,URBANA,66
+KELLEY,MULHOLLAND,Peter Mark,66
+TRACEY,ENNIS,Peter Mark,66
+GEORGIA,HAVERTY,Peter Mark,66
+HOLLY,O'KEEFFE,Peter Mark,66
+LEANNE,CONNOLLY,Peter Mark,66
+TERESA,CONNOLLY,Peter Mark,66
+RICHARD,KEAVENEY,Peter Mark,66
+ASHLING,KILDUFF,Peter Mark,66
+Maggie,Brennan Tse,Barnby & Brennan,67
+Roisin,Moylan,Barnby & Brennan,67
+Aileen,Barnby,Barnby & Brennan,67
+Liz,Barnby,Barnby & Brennan,67
+Celine,Brennan,Barnby & Brennan,67
+Lil,Courtney,Barnby & Brennan,67
+Katie,Cornally,Barnby & Brennan,67
+Fidelma,Rogan,Barnby & Brennan,67
+Aoife,Lawless,Barnby & Brennan,67
+Mairead,Shiels,Barnby & Brennan,67
