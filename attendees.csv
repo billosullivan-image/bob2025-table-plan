@@ -45,8 +45,8 @@ Donna ,O'Toole,Bohemian Beauty,4
 Paige ,Comerford,Bohemian Beauty,4
 Pamela ,Morrissey ,Sobe Brown,4
 Stephen,Hennessy,Sobe Brown,4
-Emily ,Whelan,"MD Hair Salon | Carlow",5
-Meg ,Farrell,"MD Hair Salon | Carlow",5
+Emily ,Whelan,MD Hair Salon (Carlow),5
+Meg ,Farrell,MD Hair Salon (Carlow),5
 Catherine ,Waters,Complete Laser Care,5
 Helena ,Ryan,Complete Laser Care,5
 Karen,Broderick,Beyond Beauty Galway,5
@@ -55,15 +55,14 @@ Gary,Malone,Brushdoc,5
 Ciara,Malone,Brushdoc,5
 Nicola,Nolan,ND Skin & Beauty,5
 Ciara,Nolan,ND Skin & Beauty,5
-Aisling, Dowling,"Aisling Amelia | MUA",5
-Jemima,Whyte,"Aisling Amelia | MUA",5
+Aisling, Dowling,Aisling Amelia (MUA),5
+Jemima,Whyte,Aisling Amelia (MUA),5
 Maria,Whiting,Maria Whiting,6
 Deborah ,De Courcy,Maria Whiting,6
 Niamh ,O’Carroll,Niamh O’Carroll,6
 Marah,Curtin,Niamh O’Carroll,6
 Gary ,Kehoe,HOUSE Hair Studio,6
-"Bryan 
-",Murphy ,HOUSE Hair Studio,6
+Bryan,Murphy ,HOUSE Hair Studio,6
 Emma ,Power,HOUSE Hair Studio,6
 Brendan, Molloy ,South William Clinic,6
 Joseph, Blanco,South William Clinic,6
@@ -74,8 +73,8 @@ Brian,Higgins,Galway Skin Clinic,7
 Eva,Higgins,Galway Skin Clinic,7
 Maria,Melia,Galway Skin Clinic,7
 Rebecca,Gannon,Galway Skin Clinic,7
-Stephen,O Rourke,Galway Skin Clinic,7
-Ali,O Rourke,Galway Skin Clinic,7
+Stephen,O'Rourke,Galway Skin Clinic,7
+Ali,O'Rourke,Galway Skin Clinic,7
 Chloe,Jones,Aqua Sana Forest Spa / Center Parcs,7
 Jess,Gardner,Aqua Sana Forest Spa / Center Parcs,7
 Shane,Carter,Aqua Sana Forest Spa / Center Parcs,7
@@ -158,21 +157,21 @@ Claire,Fullam,Remi,14
 Ian,O’Beirne,Remi,14
 Jo,Browne,Jo Browne,14
 Pat,O'Connor,Jo Browne,14
-Dizon Jade B. ,Egca,FILO,14
-Mary Christina ,Lumor,FILO,14
-Ryan ,Lumor,FILO,14
-Laura,Dowling,FABU,15
-Frank,Dowling,FABU,15
-Geri,Mulvany,FABU,15
-Muireann,O Connell,FABU,15
-Tara,Keane,FABU,15
-Rachael,Shotunde,FABU,15
-Connie,Whelan,FABU,15
-Lauren,Hennessey,FABU,15
-Feargal,Hoey,FABU,15
-Jennifer,Rock,FABU,15
-Jill,Deering,FABU,15
-Caoimhe,McGinley,FABU,15
+Dizon Jade B. ,Egca,Filo,14
+Mary Christina ,Lumor,Filo,14
+Ryan ,Lumor,Filo,14
+Laura,Dowling,fabÜ,15
+Frank,Dowling,fabÜ,15
+Geri,Mulvany,fabÜ,15
+Muireann,O Connell,fabÜ,15
+Tara,Keane,fabÜ,15
+Rachael,Shotunde,fabÜ,15
+Connie,Whelan,fabÜ,15
+Lauren,Hennessey,fabÜ,15
+Feargal,Hoey,fabÜ,15
+Jennifer,Rock,fabÜ,15
+Jill,Deering,fabÜ,15
+Caoimhe,McGinley,fabÜ,15
 Eavanna,Breen,Eavanna Breen,16
 Georgie,Crawford,Eavanna Breen,16
 Gelnda,Gilson,Eavanna Breen,16
@@ -327,16 +326,16 @@ Valerie,Philips ,Hair Café,28
 Lynn ,Kathleen,Hair Café,28
 Bill,O'Sullivan,IMAGE Media,28
 Karen,Bell,IMAGE Media,28
-Ciara,Swan,L'Oreal,29
-Miriam,O’Connor Meade,L'Oreal,29
-Dermot,McMahon,L'Oreal,29
-Laura,Carroll,L'Oreal,29
-Paul,Brady,L'Oreal,29
-Nikita,Purdy,L'Oreal,29
-Shauna,Forman,L'Oreal,29
-Joanne,Smith,L'Oreal,29
-Kate,Elmes,L'Oreal,29
-Johanna,Cullen,L'Oreal,29
+Ciara,Swan,L'Oréal,29
+Miriam,O’Connor Meade,L'Oréal,29
+Dermot,McMahon,L'Oréal,29
+Laura,Carroll,L'Oréal,29
+Paul,Brady,L'Oréal,29
+Nikita,Purdy,L'Oréal,29
+Shauna,Forman,L'Oréal,29
+Joanne,Smith,L'Oréal,29
+Kate,Elmes,L'Oréal,29
+Johanna,Cullen,L'Oréal,29
 Denise,Phillips,Voduz,30
 Mark,Phillips,Voduz,30
 Erin,McGregor,Voduz,30
@@ -626,8 +625,8 @@ Cheryl,McClean,Thérapie,55
 Toni,Talbot,Thérapie,55
 Chloe,Redmond,Thérapie,55
 Christina,Banyon,Thérapie,55
-Junglos,De Macedo,Thérapie,55
-Sarah,McMullen,TwoBirds,56
+Junglos,De Macedo,Brian Murphy,55
+Sarah,McMullen,HOUSE hair studio,56
 Erika,O’Donnell,TwoBirds,56
 Shauna,Joyce,TwoBirds,56
 Caroline,Lynch,TwoBirds,56
@@ -654,8 +653,8 @@ Charlene,Flanagan,Ella & Jo,58
 Jenny,Beattie,Ella & Jo,58
 Mary-Claire,Kelly,Mary-Claire Kelly,58
 Emma,Casey,Emma Casey,58
-Kerry,Kelly,"The Castle Spa | Dromoland Castle",58
-Louise,Hassett,"The Castle Spa | Dromoland Castle",58
+Kerry,Kelly,The Castle Spa (Dromoland Castle),58
+Louise,Hassett,The Castle Spa (Dromoland Castle),58
 Katrina,Kelly,Katrina Kelly Perry,58
 Dina,Clarke,Katrina Kelly Perry,58
 Amy,Mcpartlin,Katrina Kelly Perry,58
@@ -674,10 +673,10 @@ Jenny,Dawson,Dr Paul Coughlan,59
 Emma,Martin,Dr Paul Coughlan,59
 Con,Martin,Dr Paul Coughlan,59
 Madeline,Riley,Radisson Blu Royal Hotel ,60
-Irene,Scott,"Velvaere Spa | Radisson Blu Golden Lane",60
-Gillian,Snee,"Velvaere Spa | Radisson Blu Golden Lane",60
-Luna,Deville,"Velvaere Spa | Radisson Blu Golden Lane",60
-Sienna,Tobin,"Velvaere Spa | Radisson Blu Golden Lane",60
+Irene,Scott,Velvaere Spa (Radisson Blu Golden Lane),60
+Gillian,Snee,Velvaere Spa (Radisson Blu Golden Lane),60
+Luna,Deville,Velvaere Spa (Radisson Blu Golden Lane),60
+Sienna,Tobin,Velvaere Spa (Radisson Blu Golden Lane),60
 Deirdre,Fitzgerald,Fitzgerald Private Clinic ,60
 Justin,Gilmartin,Fitzgerald Private Clinic ,60
 Noelle,McCrory,Fitzgerald Private Clinic ,60
@@ -734,30 +733,30 @@ Shannon,Trollip,Luxe Nails and Beauty,64
 Raquel,Herrara,Luxe Nails and Beauty,64
 Isobel,Kearns,Luxe Nails and Beauty,64
 Grace,Murphy,Luxe Nails and Beauty,64
-Paula,Cuddihy,URBANA,65
-Michelle,Bowes,URBANA,65
-Anne,Power,URBANA,65
-Megan,McDonnell,URBANA,65
-Lauren,O'Toole,URBANA,65
-Chloe,Behan,URBANA,65
-Lene,Reardon,URBANA,65
-Leah,Murphy,URBANA,65
-Harriet,Smyth,URBANA,65
-Kara,Scully,URBANA,65
-Eimear,Mallon,URBANA,65
-Emilia,Carandino,URBANA,65
-Emer,Lawless,URBANA,66
-Jenny,Broughan,URBANA,66
-Yaiza,Alonso,URBANA,66
-Khloe,Kelly,URBANA,66
-KELLEY,MULHOLLAND,Peter Mark,66
-TRACEY,ENNIS,Peter Mark,66
-GEORGIA,HAVERTY,Peter Mark,66
-HOLLY,O'KEEFFE,Peter Mark,66
-LEANNE,CONNOLLY,Peter Mark,66
-TERESA,CONNOLLY,Peter Mark,66
-RICHARD,KEAVENEY,Peter Mark,66
-ASHLING,KILDUFF,Peter Mark,66
+Paula,Cuddihy,Urbana,65
+Michelle,Bowes,Urbana,65
+Anne,Power,Urbana,65
+Megan,McDonnell,Urbana,65
+Lauren,O'Toole,Urbana,65
+Chloe,Behan,Urbana,65
+Lene,Reardon,Urbana,65
+Leah,Murphy,Urbana,65
+Harriet,Smyth,Urbana,65
+Kara,Scully,Urbana,65
+Eimear,Mallon,Urbana,65
+Emilia,Carandino,Urbana,65
+Emer,Lawless,Urbana,66
+Jenny,Broughan,Urbana,66
+Yaiza,Alonso,Urbana,66
+Khloe,Kelly,Urbana,66
+Kelley,Mulholland,Peter Mark,66
+Tracey,Ennis,Peter Mark,66
+Georgia,Haverty,Peter Mark,66
+Holly,O'Keeffe,Peter Mark,66
+Leanne,Connolly,Peter Mark,66
+Teresa,Connolly,Peter Mark,66
+Richard,Keaveney,Peter Mark,66
+Ashling,Kilduff,Peter Mark,66
 Maggie,Brennan Tse,Barnby & Brennan,67
 Roisin,Moylan,Barnby & Brennan,67
 Aileen,Barnby,Barnby & Brennan,67
