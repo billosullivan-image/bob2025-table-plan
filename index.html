@@ -193,9 +193,9 @@
       width: 22px;
       height: 22px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      background: rgba(0, 0, 0, 0.7);
-      color: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.45);  /* gold-ish fill */
+      color: #000000;                          /* black X */
       font-size: 0.9rem;
       line-height: 1;
       display: none;
@@ -240,10 +240,8 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .result-item:first-child {
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      padding-top: 10px;
-    }
+    /* Removed border-top on first child to avoid double lines */
+    /* .result-item:first-child { ... } */
 
     .result-item:last-child {
       border-bottom: none;
@@ -303,7 +301,7 @@
     .map-hint {
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin: 0 0 10px;
+      margin: 2px 0 10px;
     }
 
     .room-map {
@@ -444,7 +442,7 @@
             <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
           </div>
 
-          <!-- Table dropdown (kept hidden but still in DOM) -->
+          <!-- Table dropdown (kept hidden; UI is the map instead) -->
           <div class="field" id="panel-table" style="display:none;">
             <label for="tableSelect">Table number</label>
             <select id="tableSelect">
@@ -455,19 +453,22 @@
           </div>
         </section>
 
-        <!-- Summary -->
+        <!-- Summary (filter text / table + guest count) -->
         <div class="summary-row" id="summaryRow" aria-live="polite">
           <span id="activeFilter"></span>
         </div>
 
-        <!-- Room map NOW sits before results -->
+        <!-- Error -->
+        <div class="error-state" id="errorMessage" role="alert" style="display:none;"></div>
+
+        <!-- Room map (now above the results) -->
         <section
           class="room-map-wrapper"
           id="roomMapWrapper"
           aria-label="Room layout"
           style="display:none;"
         >
-          <h2 class="map-title">TABLE LOCATION</h2>
+          <h2 class="map-title">Table location</h2>
           <p class="map-hint">Tap any table on the map to see who is seated there.</p>
 
           <div class="room-map">
@@ -787,10 +788,7 @@
           </div>
         </section>
 
-        <!-- Error -->
-        <div class="error-state" id="errorMessage" role="alert" style="display:none;"></div>
-
-        <!-- Results (now AFTER map) -->
+        <!-- Results (now below the map) -->
         <section class="results" id="results" aria-live="polite" aria-label="Guest results list"></section>
       </main>
     </div>
@@ -846,7 +844,6 @@
       });
 
       dom.tableSelect.addEventListener("change", () => {
-        // Dropdown kept hidden; still wired in case ever used
         state.selectedTable = dom.tableSelect.value;
         render();
       });
@@ -868,7 +865,7 @@
             if (!table) return;
             setMode("table");
             state.selectedTable = table;
-            dom.tableSelect.value = table; // keeps in sync, even if hidden
+            dom.tableSelect.value = table; // keeps things in sync, even if hidden
             render();
             dom.results.scrollTop = 0;
           });
@@ -887,7 +884,7 @@
         const text = await response.text();
         state.guests = parseCsv(text);
         state.loaded = true;
-        buildTableDropdown(state.guests); // fills hidden dropdown
+        buildTableDropdown(state.guests); // fills hidden dropdown; cheap and harmless
         render();
       } catch (err) {
         console.error(err);
@@ -1013,7 +1010,8 @@
         dom.modeSearchBtn.setAttribute("aria-selected", "true");
         dom.modeTableBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "";
-        dom.tablePanel.style.display = "none";
+        dom.tablePanel.style.display = "none"; // stays hidden anyway
+        dom.roomMapWrapper.style.display = "none";
         dom.searchInput.focus();
       } else {
         dom.modeTableBtn.classList.add("active");
@@ -1021,7 +1019,7 @@
         dom.modeTableBtn.setAttribute("aria-selected", "true");
         dom.modeSearchBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "none";
-        dom.tablePanel.style.display = "none"; // we now use the map instead
+        dom.tablePanel.style.display = "none";
       }
 
       render();
@@ -1072,7 +1070,6 @@
       if (!state.loaded) {
         dom.activeFilter.textContent = "Loading guest list…";
         dom.results.innerHTML = "";
-        dom.results.style.borderTop = ""; // default
         updateMapHighlight();
         return;
       }
@@ -1091,52 +1088,45 @@
         }
       }
 
-      // Summary text
+      // Compute guests once per render if needed
+      const guests = hasQuery ? getFilteredGuests() : [];
+
+      // Update filter text (no instructional text here now)
       if (!hasQuery) {
-        if (isSearchMode) {
-          dom.activeFilter.textContent = "Start typing a name or company.";
-        } else {
-          // In table mode, we rely on the TABLE LOCATION hint, so no extra text here
-          dom.activeFilter.textContent = "";
-        }
+        dom.activeFilter.textContent = "";
       } else if (isSearchMode) {
         dom.activeFilter.textContent = state.searchTerm
           ? `Filter: “${state.searchTerm}”`
           : "";
       } else {
+        const count = guests.length;
+        const label = count === 1 ? "guest" : "guests";
         dom.activeFilter.textContent = state.selectedTable
-          ? `Table: ${state.selectedTable}`
+          ? `Table: ${state.selectedTable} · ${count} ${label}`
           : "";
       }
 
-      // Border above results: keep in search mode, remove in table mode
-      if (isSearchMode) {
-        dom.results.style.borderTop = ""; // use CSS (line visible)
-      } else {
-        dom.results.style.borderTop = "none"; // no line under map
-      }
-
+      // Empty-query messaging
       if (!hasQuery) {
-        if (isSearchMode) {
-          dom.results.innerHTML =
-            '<div class="empty-state">Begin by typing a first name, last name, or company.</div>';
-        } else {
-          // In table mode with no table selected, no extra message under the map
-          dom.results.innerHTML = "";
-        }
+        dom.results.innerHTML = isSearchMode
+          ? '<div class="empty-state">Begin by typing a first name, last name, or company.</div>'
+          : '<div class="empty-state">Guests at your selected table will appear here.</div>';
         updateMapHighlight();
         return;
       }
 
-      const guests = getFilteredGuests();
-
+      // No results
       if (guests.length === 0) {
+        const noResultMsg = isSearchMode
+          ? "No results found. Please check the spelling or try a different name or company."
+          : "No results found for this table.";
         dom.results.innerHTML =
-          '<div class="empty-state">No results found. Please check the spelling or try a different name, company, or table number.</div>';
+          '<div class="empty-state">' + noResultMsg + "</div>";
         updateMapHighlight();
         return;
       }
 
+      // Build results list
       const fragment = document.createDocumentFragment();
 
       guests.forEach(g => {
