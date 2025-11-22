@@ -324,7 +324,6 @@
   transition: fill 0.18s ease,
               stroke 0.18s ease,
               stroke-width 0.18s ease,
-              transform 0.18s ease;
 }
 
 .map-table text {
@@ -338,7 +337,8 @@
   fill: #e6ca88;                 /* gold fill */
   stroke: #000000;               /* black outline for extra contrast */
   stroke-width: 4;
-  transform: scale(1.08);
+  /* no scale so it stays perfectly aligned */
+  transform: none;
 }
 
 .map-table.active text {
