@@ -194,8 +194,8 @@
       height: 22px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.45);
-      background: rgba(255, 255, 255, 0.45);  /* gold-ish fill */
-      color: #000000;                          /* black X */
+      background: rgba(255, 255, 255, 0.45);   /* filled same as outline */
+      color: #000000;                           /* black “X” */
       font-size: 0.9rem;
       line-height: 1;
       display: none;
@@ -225,12 +225,13 @@
       color: var(--text-muted);
       gap: 6px;
       flex-wrap: wrap;
+      min-height: 1.2em;
     }
 
     .results {
       margin-top: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      padding-top: 10px;
+      border-top: none;   /* remove extra line */
+      padding-top: 0;
       max-height: none;
       overflow: visible;
     }
@@ -240,8 +241,10 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* Removed border-top on first child to avoid double lines */
-    /* .result-item:first-child { ... } */
+    .result-item:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.16); /* single divider above first result */
+      padding-top: 10px;
+    }
 
     .result-item:last-child {
       border-bottom: none;
@@ -282,12 +285,18 @@
       color: #ffb3b3;
     }
 
+    .results-hint {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
     /* MAP STYLES */
 
     .room-map-wrapper {
       margin-top: 18px;
       padding-top: 0;
-      border-top: none; /* no horizontal rule above TABLE LOCATION */
+      border-top: none;   /* no extra line above map */
     }
 
     .map-title {
@@ -301,7 +310,7 @@
     .map-hint {
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin: 2px 0 10px;
+      margin: 0 0 10px;
     }
 
     .room-map {
@@ -442,7 +451,7 @@
             <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
           </div>
 
-          <!-- Table dropdown (kept hidden; UI is the map instead) -->
+          <!-- Table dropdown (kept for code simplicity, but always hidden) -->
           <div class="field" id="panel-table" style="display:none;">
             <label for="tableSelect">Table number</label>
             <select id="tableSelect">
@@ -453,7 +462,7 @@
           </div>
         </section>
 
-        <!-- Summary (filter text / table + guest count) -->
+        <!-- Summary -->
         <div class="summary-row" id="summaryRow" aria-live="polite">
           <span id="activeFilter"></span>
         </div>
@@ -461,7 +470,10 @@
         <!-- Error -->
         <div class="error-state" id="errorMessage" role="alert" style="display:none;"></div>
 
-        <!-- Room map (now above the results) -->
+        <!-- Results -->
+        <section class="results" id="results" aria-live="polite" aria-label="Guest results list"></section>
+
+        <!-- Room map -->
         <section
           class="room-map-wrapper"
           id="roomMapWrapper"
@@ -787,9 +799,6 @@
             </svg>
           </div>
         </section>
-
-        <!-- Results (now below the map) -->
-        <section class="results" id="results" aria-live="polite" aria-label="Guest results list"></section>
       </main>
     </div>
   </div>
@@ -808,7 +817,8 @@
       mode: "search", // "search" | "table"
       searchTerm: "",
       selectedTable: "",
-      loaded: false
+      loaded: false,
+      tableGuestCounts: {}
     };
 
     const dom = {};
@@ -844,6 +854,7 @@
       });
 
       dom.tableSelect.addEventListener("change", () => {
+        // Dropdown kept hidden; code left for completeness
         state.selectedTable = dom.tableSelect.value;
         render();
       });
@@ -883,8 +894,9 @@
         }
         const text = await response.text();
         state.guests = parseCsv(text);
+        state.tableGuestCounts = computeTableGuestCounts(state.guests);
         state.loaded = true;
-        buildTableDropdown(state.guests); // fills hidden dropdown; cheap and harmless
+        buildTableDropdown(state.guests); // fills hidden dropdown
         render();
       } catch (err) {
         console.error(err);
@@ -974,6 +986,16 @@
       return guests;
     }
 
+    function computeTableGuestCounts(guests) {
+      const counts = {};
+      guests.forEach(g => {
+        const table = (g.table || "").trim();
+        if (!table) return;
+        counts[table] = (counts[table] || 0) + 1;
+      });
+      return counts;
+    }
+
     function buildTableDropdown(guests) {
       const tables = Array.from(
         new Set(
@@ -1010,8 +1032,7 @@
         dom.modeSearchBtn.setAttribute("aria-selected", "true");
         dom.modeTableBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "";
-        dom.tablePanel.style.display = "none"; // stays hidden anyway
-        dom.roomMapWrapper.style.display = "none";
+        dom.tablePanel.style.display = "none"; // stays hidden
         dom.searchInput.focus();
       } else {
         dom.modeTableBtn.classList.add("active");
@@ -1076,9 +1097,10 @@
 
       const isSearchMode = state.mode === "search";
       const searchTermNormalized = normalizeForSearch(state.searchTerm);
+      const selectedTableTrimmed = (state.selectedTable || "").trim();
       const hasQuery = isSearchMode
         ? searchTermNormalized.length > 0
-        : (state.selectedTable || "").trim().length > 0;
+        : selectedTableTrimmed.length > 0;
 
       if (dom.clearSearchBtn) {
         if (searchTermNormalized.length > 0 && isSearchMode) {
@@ -1088,10 +1110,7 @@
         }
       }
 
-      // Compute guests once per render if needed
-      const guests = hasQuery ? getFilteredGuests() : [];
-
-      // Update filter text (no instructional text here now)
+      // Summary text (top right)
       if (!hasQuery) {
         dom.activeFilter.textContent = "";
       } else if (isSearchMode) {
@@ -1099,34 +1118,47 @@
           ? `Filter: “${state.searchTerm}”`
           : "";
       } else {
-        const count = guests.length;
-        const label = count === 1 ? "guest" : "guests";
-        dom.activeFilter.textContent = state.selectedTable
-          ? `Table: ${state.selectedTable} · ${count} ${label}`
-          : "";
+        const table = selectedTableTrimmed;
+        if (table) {
+          const count = (state.tableGuestCounts && state.tableGuestCounts[table]) || 0;
+          let label;
+          if (count === 0) {
+            label = `Table: ${table}`;
+          } else if (count === 1) {
+            label = `Table: ${table} (1 guest)`;
+          } else {
+            label = `Table: ${table} (${count} guests)`;
+          }
+          dom.activeFilter.textContent = label;
+        } else {
+          dom.activeFilter.textContent = "";
+        }
       }
 
-      // Empty-query messaging
+      // No query yet: show hints, no results
       if (!hasQuery) {
-        dom.results.innerHTML = isSearchMode
-          ? '<div class="empty-state">Begin by typing a first name, last name, or company.</div>'
-          : '<div class="empty-state">Guests at your selected table will appear here.</div>';
+        if (isSearchMode) {
+          dom.results.innerHTML =
+            '<div class="empty-state">Begin by typing a first name, last name, or company.</div>';
+        } else {
+          // In table mode, rely on the map header/hint only
+          dom.results.innerHTML = "";
+        }
         updateMapHighlight();
         return;
       }
 
-      // No results
+      const guests = getFilteredGuests();
+
       if (guests.length === 0) {
-        const noResultMsg = isSearchMode
+        const msg = isSearchMode
           ? "No results found. Please check the spelling or try a different name or company."
           : "No results found for this table.";
-        dom.results.innerHTML =
-          '<div class="empty-state">' + noResultMsg + "</div>";
+        dom.results.innerHTML = `<div class="empty-state">${msg}</div>`;
         updateMapHighlight();
         return;
       }
 
-      // Build results list
       const fragment = document.createDocumentFragment();
 
       guests.forEach(g => {
@@ -1156,6 +1188,14 @@
 
       dom.results.innerHTML = "";
       dom.results.appendChild(fragment);
+
+      // TIP under results in search mode
+      if (isSearchMode) {
+        const hint = document.createElement("div");
+        hint.className = "results-hint";
+        hint.textContent = "TIP: Tap the table number to see where it is in the room.";
+        dom.results.appendChild(hint);
+      }
 
       // Clicking "TABLE X" in results switches to table mode and highlights on map
       const tableLinks = dom.results.querySelectorAll(".table-link");
