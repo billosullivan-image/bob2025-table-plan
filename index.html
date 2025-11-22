@@ -1091,12 +1091,12 @@
         }
       }
 
-      if (!hasQuery) {
-        if (isSearchMode) {
-          dom.activeFilter.textContent = "Start typing a name or company.";
-        } else {
-          dom.activeFilter.textContent = "Tap a table on the map to view its guests.";
-        }
+if (!hasQuery) {
+  if (isSearchMode) {
+    dom.activeFilter.textContent = "Start typing a name or company.";
+  } else {
+    dom.activeFilter.textContent = "";
+  }
       } else if (isSearchMode) {
         dom.activeFilter.textContent = state.searchTerm
           ? `Filter: “${state.searchTerm}”`
@@ -1108,9 +1108,9 @@
       }
 
       if (!hasQuery) {
-        dom.results.innerHTML = isSearchMode
-          ? '<div class="empty-state">Begin by typing a first name, last name, or company.</div>'
-          : '<div class="empty-state">Tap any table on the map above to see who is seated there.</div>';
+dom.results.innerHTML = isSearchMode
+  ? '<div class="empty-state">Begin by typing a first name, last name, or company.</div>'
+  : '<div class="empty-state"></div>';
         updateMapHighlight();
         return;
       }
