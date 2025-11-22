@@ -305,38 +305,51 @@
       margin: 0 auto;
     }
 
-    .room-map svg {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+.room-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-    .map-table {
-      cursor: pointer;
-      transition: transform 0.18s ease;
-    }
+.map-table {
+  cursor: pointer;
+  transition: transform 0.18s ease;
+}
 
-    .map-table circle {
-      fill: #f3dca3;
-      stroke: #b3914a;
-      stroke-width: 3;
-      transition: stroke 0.18s ease, stroke-width 0.18s ease, transform 0.18s ease;
-    }
+/* DEFAULT STATE: black circles, gold outline, gold bold numbers */
+.map-table circle {
+  fill: #000000;                 /* black fill */
+  stroke: #e6ca88;               /* gold outline */
+  stroke-width: 3;
+  transition: fill 0.18s ease,
+              stroke 0.18s ease,
+              stroke-width 0.18s ease,
+              transform 0.18s ease;
+}
 
-    .map-table text {
-      fill: #000000;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-    }
+.map-table text {
+  fill: #e6ca88;                 /* gold numbers */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-weight: 700;              /* bold */
+}
 
-    .map-table.active circle {
-      stroke: #e6ca88;
-      stroke-width: 5;
-      transform: scale(1.12);
-    }
+/* ACTIVE / HIGHLIGHTED TABLE: gold circle, black bold number */
+.map-table.active circle {
+  fill: #e6ca88;                 /* gold fill */
+  stroke: #000000;               /* black outline for extra contrast */
+  stroke-width: 4;
+  transform: scale(1.08);
+}
 
-    .map-table:hover circle {
-      stroke-width: 4;
-    }
+.map-table.active text {
+  fill: #000000;                 /* black number */
+  font-weight: 700;              /* stays bold */
+}
+
+/* Optional hover feedback */
+.map-table:hover circle {
+  stroke-width: 4;
+}
 
     @media (min-width: 640px) {
       header h1 {
