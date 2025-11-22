@@ -249,26 +249,27 @@
       border-bottom: none;
     }
 
-.result-name {
-  font-weight: 700;
-  font-size: 1.125rem; /* ≈ 18px on most devices */
-  letter-spacing: 0.02em;
-}
+    /* Bigger typography for results */
+    .result-name {
+      font-weight: 700;
+      font-size: 1.125rem; /* ≈ 18px */
+      letter-spacing: 0.02em;
+    }
 
-.result-company {
-  font-size: 1rem; /* ≈ 16px */
-  color: var(--text-muted);
-  margin-top: 3px;
-}
+    .result-company {
+      font-size: 1rem;     /* ≈ 16px */
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
 
-.result-table {
-  margin-top: 6px;
-  font-size: 0.95rem; /* ≈ 15px */
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #e6ca88;
-}
+    .result-table {
+      margin-top: 6px;
+      font-size: 0.95rem;  /* ≈ 15px */
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #e6ca88;
+    }
 
     .empty-state {
       padding: 16px 2px 6px;
@@ -298,6 +299,12 @@
       color: var(--text-muted);
       margin: 0 0 10px;
     }
+	  
+	.map-hint {
+	  font-size: 0.8rem;
+	  color: var(--text-muted);
+	  margin: 2px 0 10px;
+	}
 
     .room-map {
       position: relative;
@@ -305,54 +312,52 @@
       margin: 0 auto;
     }
 
-.room-map svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+    .room-map svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-.map-table {
-  cursor: pointer;
-  transition: transform 0.18s ease;
-}
+    .map-table {
+      cursor: pointer;
+      transition: transform 0.18s ease;
+    }
 
-/* DEFAULT STATE: black circles, gold outline, gold bold numbers */
-.map-table circle {
-  fill: #000000;
-  stroke: #e6ca88;
-  stroke-width: 3;
-  transition: fill 0.18s ease,
-              stroke 0.18s ease,
-              stroke-width 0.18s ease,
-              transform 0.18s ease; /* allow scale to animate smoothly */
-  transform-box: fill-box;
-  transform-origin: 50% 50%; /* centre transforms */
-}
+    /* Default: black circles, gold outline, gold bold numbers */
+    .map-table circle {
+      fill: #000000;
+      stroke: #e6ca88;
+      stroke-width: 3;
+      transition: fill 0.18s ease,
+                  stroke 0.18s ease,
+                  stroke-width 0.18s ease,
+                  transform 0.18s ease;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+    }
 
-.map-table text {
-  fill: #e6ca88;                 /* gold numbers */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-  font-weight: 700;              /* bold */
-}
+    .map-table text {
+      fill: #e6ca88;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      font-weight: 700;
+    }
 
-/* ACTIVE / HIGHLIGHTED TABLE: gold circle, black bold number */
-.map-table.active circle {
-  fill: #e6ca88;       /* gold fill */
-  stroke: #000000;     /* black outline */
-  stroke-width: 4;
-  transform: scale(1.045);  /* subtle enlargement without visible shift */
-  transform-origin: 50% 50%; /* ensure perfect centring */
-}
+    /* Active: gold circle, black bold number, slight magnification */
+    .map-table.active circle {
+      fill: #e6ca88;
+      stroke: #000000;
+      stroke-width: 4;
+      transform: scale(1.05);
+    }
 
-.map-table.active text {
-  fill: #000000;                 /* black number */
-  font-weight: 700;              /* stays bold */
-}
+    .map-table.active text {
+      fill: #000000;
+      font-weight: 700;
+    }
 
-/* Optional hover feedback */
-.map-table:hover circle {
-  stroke-width: 4;
-}
+    .map-table:hover circle {
+      stroke-width: 4;
+    }
 
     @media (min-width: 640px) {
       header h1 {
@@ -439,8 +444,8 @@
             <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
           </div>
 
-          <!-- Table dropdown -->
-          <div class="field" id="panel-table" style="display: none;">
+          <!-- Table dropdown (kept for code simplicity, but always hidden) -->
+          <div class="field" id="panel-table" style="display:none;">
             <label for="tableSelect">Table number</label>
             <select id="tableSelect">
               <option value="">All tables</option>
@@ -463,14 +468,16 @@
 
         <!-- Room map -->
         <section
-          class="room-map-wrapper"
-          id="roomMapWrapper"
-          aria-label="Room layout"
-          style="display:none;"
-        >
-          <h2 class="map-title">Table location</h2>
-          <div class="room-map">
-            <!-- Inline SVG room map -->
+  class="room-map-wrapper"
+  id="roomMapWrapper"
+  aria-label="Room layout"
+  style="display:none;"
+>
+  <h2 class="map-title">Table location</h2>
+  <p class="map-hint">Tap any table on the map to see who is seated there.</p>
+
+  <div class="room-map">
+    <!-- Inline SVG room map -->
             <svg xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 648 1106"
                  role="img"
@@ -839,6 +846,7 @@
       });
 
       dom.tableSelect.addEventListener("change", () => {
+        // Dropdown kept hidden; code left here harmlessly in case ever used
         state.selectedTable = dom.tableSelect.value;
         render();
       });
@@ -852,7 +860,7 @@
         });
       }
 
-      // Allow clicking tables on the map to select that table
+      // Clicking a table on the map selects that table
       if (dom.mapTables && dom.mapTables.forEach) {
         dom.mapTables.forEach(el => {
           el.addEventListener("click", () => {
@@ -860,7 +868,7 @@
             if (!table) return;
             setMode("table");
             state.selectedTable = table;
-            dom.tableSelect.value = table;
+            dom.tableSelect.value = table; // keeps things in sync, even if hidden
             render();
             dom.results.scrollTop = 0;
           });
@@ -879,7 +887,7 @@
         const text = await response.text();
         state.guests = parseCsv(text);
         state.loaded = true;
-        buildTableDropdown(state.guests);
+        buildTableDropdown(state.guests); // fills hidden dropdown; cheap and harmless
         render();
       } catch (err) {
         console.error(err);
@@ -1005,7 +1013,7 @@
         dom.modeSearchBtn.setAttribute("aria-selected", "true");
         dom.modeTableBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "";
-        dom.tablePanel.style.display = "none";
+        dom.tablePanel.style.display = "none"; // stays hidden anyway
         dom.searchInput.focus();
       } else {
         dom.modeTableBtn.classList.add("active");
@@ -1013,8 +1021,8 @@
         dom.modeTableBtn.setAttribute("aria-selected", "true");
         dom.modeSearchBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "none";
-        dom.tablePanel.style.display = "";
-        dom.tableSelect.focus();
+        // tablePanel remains hidden; map is the UI
+        dom.tablePanel.style.display = "none";
       }
 
       render();
@@ -1043,19 +1051,21 @@
     function updateMapHighlight() {
       if (!dom.roomMapWrapper || !dom.mapTables) return;
 
-      const inTableMode = state.mode === "table";
+      const isTableMode = state.mode === "table";
       const table = (state.selectedTable || "").trim();
 
-      if (!inTableMode || !table) {
+      if (!isTableMode) {
         dom.roomMapWrapper.style.display = "none";
         dom.mapTables.forEach(el => el.classList.remove("active"));
         return;
       }
 
+      // In table mode: always show the map
       dom.roomMapWrapper.style.display = "";
+
       dom.mapTables.forEach(el => {
-        const isActive = el.getAttribute("data-table") === table;
-        el.classList.toggle("active", isActive);
+        const isActive = table && el.getAttribute("data-table") === table;
+        el.classList.toggle("active", !!isActive);
       });
     }
 
@@ -1082,7 +1092,11 @@
       }
 
       if (!hasQuery) {
-        dom.activeFilter.textContent = "Start typing or choose a table.";
+        if (isSearchMode) {
+          dom.activeFilter.textContent = "Start typing a name or company.";
+        } else {
+          dom.activeFilter.textContent = "Tap a table on the map to view its guests.";
+        }
       } else if (isSearchMode) {
         dom.activeFilter.textContent = state.searchTerm
           ? `Filter: “${state.searchTerm}”`
@@ -1094,8 +1108,9 @@
       }
 
       if (!hasQuery) {
-        dom.results.innerHTML =
-          '<div class="empty-state">Begin by typing a first name, last name, company, or choose a table number from the list.</div>';
+        dom.results.innerHTML = isSearchMode
+          ? '<div class="empty-state">Begin by typing a first name, last name, or company.</div>'
+          : '<div class="empty-state">Tap any table on the map above to see who is seated there.</div>';
         updateMapHighlight();
         return;
       }
@@ -1139,7 +1154,7 @@
       dom.results.innerHTML = "";
       dom.results.appendChild(fragment);
 
-      // Enable clicking table numbers to load the full table view
+      // Clicking "TABLE X" in results switches to table mode and highlights on map
       const tableLinks = dom.results.querySelectorAll(".table-link");
       tableLinks.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -1151,7 +1166,8 @@
           dom.modeSearchBtn.setAttribute("aria-selected", "false");
           dom.modeTableBtn.setAttribute("aria-selected", "true");
           dom.searchPanel.style.display = "none";
-          dom.tablePanel.style.display = "";
+          dom.tablePanel.style.display = "none";
+
           dom.tableSelect.value = table;
           state.selectedTable = table;
 
