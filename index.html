@@ -318,12 +318,14 @@
 
 /* DEFAULT STATE: black circles, gold outline, gold bold numbers */
 .map-table circle {
-  fill: #000000;                 /* black fill */
-  stroke: #e6ca88;               /* gold outline */
+  fill: #000000;
+  stroke: #e6ca88;
   stroke-width: 3;
   transition: fill 0.18s ease,
               stroke 0.18s ease,
               stroke-width 0.18s ease,
+              transform 0.18s ease; /* allow scale to animate smoothly */
+  transform-origin: 50% 50%; /* centre transforms */
 }
 
 .map-table text {
@@ -334,11 +336,11 @@
 
 /* ACTIVE / HIGHLIGHTED TABLE: gold circle, black bold number */
 .map-table.active circle {
-  fill: #e6ca88;                 /* gold fill */
-  stroke: #000000;               /* black outline for extra contrast */
+  fill: #e6ca88;       /* gold fill */
+  stroke: #000000;     /* black outline */
   stroke-width: 4;
-  /* no scale so it stays perfectly aligned */
-  transform: none;
+  transform: scale(1.045);  /* subtle enlargement without visible shift */
+  transform-origin: 50% 50%; /* ensure perfect centring */
 }
 
 .map-table.active text {
