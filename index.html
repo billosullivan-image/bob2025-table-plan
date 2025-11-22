@@ -109,7 +109,7 @@
       background: transparent;
       color: var(--text-muted);
       padding: 6px 14px;
-      font-size: 16px;      /* readable, avoids iOS zoom */
+      font-size: 16px;      /* readable, avoids iOS zoom issues */
       border-radius: var(--radius-pill);
       cursor: pointer;
       white-space: nowrap;
@@ -193,9 +193,9 @@
       width: 22px;
       height: 22px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.45);
-      background: rgba(255, 255, 255, 0.45); /* same as outline colour */
-      color: #000000;                         /* black "X" */
+      border: none;
+      background: rgba(255, 255, 255, 0.45); /* same feel as input outline */
+      color: #000000;                         /* black “X” for clarity */
       font-size: 0.9rem;
       line-height: 1;
       display: none;
@@ -229,8 +229,8 @@
 
     .results {
       margin-top: 12px;
+      border-top: none;      /* no line between map/search and first result */
       padding-top: 0;
-      border-top: none;   /* no horizontal line above results */
       max-height: none;
       overflow: visible;
     }
@@ -238,6 +238,11 @@
     .result-item {
       padding: 10px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .result-item:first-child {
+      border-top: none;      /* remove extra line above first result */
+      padding-top: 10px;
     }
 
     .result-item:last-child {
@@ -279,18 +284,12 @@
       color: #ffb3b3;
     }
 
-    .results-tip {
-      margin-top: 10px;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
     /* MAP STYLES */
 
     .room-map-wrapper {
       margin-top: 18px;
+      border-top: none;     /* no line above map */
       padding-top: 0;
-      border-top: none;   /* no horizontal line above map */
     }
 
     .map-title {
@@ -298,13 +297,8 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--text-muted);
-      margin: 0 0 6px;
-    }
-
-    .map-hint {
-      font-size: 0.8rem;
-      color: var(--text-muted);
       margin: 0 0 10px;
+      text-align: center;
     }
 
     .room-map {
@@ -317,6 +311,13 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+
+    .table-summary {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
     .map-table {
@@ -358,6 +359,12 @@
 
     .map-table:hover circle {
       stroke-width: 4;
+    }
+
+    .search-tip {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
     @media (min-width: 640px) {
@@ -445,7 +452,7 @@
             <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
           </div>
 
-          <!-- Table dropdown (kept for logic, but always hidden in this UI) -->
+          <!-- Table dropdown (kept for code simplicity, but always hidden) -->
           <div class="field" id="panel-table" style="display:none;">
             <label for="tableSelect">Table number</label>
             <select id="tableSelect">
@@ -456,7 +463,7 @@
           </div>
         </section>
 
-        <!-- Summary -->
+        <!-- Summary (used only for search filter text now) -->
         <div class="summary-row" id="summaryRow" aria-live="polite">
           <span id="activeFilter"></span>
         </div>
@@ -464,7 +471,7 @@
         <!-- Error -->
         <div class="error-state" id="errorMessage" role="alert" style="display:none;"></div>
 
-        <!-- Room map (now ABOVE results) -->
+        <!-- Room map (now appears ABOVE the results in table mode) -->
         <section
           class="room-map-wrapper"
           id="roomMapWrapper"
@@ -472,7 +479,6 @@
           style="display:none;"
         >
           <h2 class="map-title">Table location</h2>
-          <p class="map-hint">Tap any table on the map to see who is seated there.</p>
 
           <div class="room-map">
             <!-- Inline SVG room map -->
@@ -789,10 +795,18 @@
               </g>
             </svg>
           </div>
+
+          <!-- Table summary centred under the map -->
+          <p id="tableSummary" class="table-summary"></p>
         </section>
 
-        <!-- Results (now BELOW the map) -->
+        <!-- Results (names list) -->
         <section class="results" id="results" aria-live="polite" aria-label="Guest results list"></section>
+
+        <!-- Search tip under results (search mode only) -->
+        <p id="searchTip" class="search-tip" style="display:none;">
+          TIP: Tap the table number to see where it is in the room.
+        </p>
       </main>
     </div>
   </div>
@@ -812,7 +826,7 @@
       searchTerm: "",
       selectedTable: "",
       loaded: false,
-      tableCounts: {}
+      tableCounts: {}  // table -> number of guests
     };
 
     const dom = {};
@@ -836,6 +850,8 @@
       dom.clearSearchBtn = document.getElementById("clearSearch");
       dom.roomMapWrapper = document.getElementById("roomMapWrapper");
       dom.mapTables = document.querySelectorAll(".map-table");
+      dom.tableSummary = document.getElementById("tableSummary");
+      dom.searchTip = document.getElementById("searchTip");
     }
 
     function bindEvents() {
@@ -848,6 +864,7 @@
       });
 
       dom.tableSelect.addEventListener("change", () => {
+        // Dropdown kept hidden; left wired for completeness
         state.selectedTable = dom.tableSelect.value;
         render();
       });
@@ -867,9 +884,10 @@
           el.addEventListener("click", () => {
             const table = el.getAttribute("data-table");
             if (!table) return;
+            setMode("table");
             state.selectedTable = table;
-            dom.tableSelect.value = table;
-            setMode("table"); // will also call render()
+            dom.tableSelect.value = table; // keeps in sync, even if hidden
+            render();
             dom.results.scrollTop = 0;
           });
         });
@@ -886,7 +904,15 @@
         }
         const text = await response.text();
         state.guests = parseCsv(text);
-        computeTableCounts();
+
+        // Build table counts for "Table XX (YY guests)"
+        state.tableCounts = {};
+        state.guests.forEach(g => {
+          const key = (g.table || "").trim();
+          if (!key) return;
+          state.tableCounts[key] = (state.tableCounts[key] || 0) + 1;
+        });
+
         state.loaded = true;
         buildTableDropdown(state.guests); // fills hidden dropdown
         render();
@@ -898,17 +924,6 @@
         dom.activeFilter.textContent = "Guest list unavailable.";
         dom.results.innerHTML = "";
       }
-    }
-
-    function computeTableCounts() {
-      const counts = {};
-      state.guests.forEach(g => {
-        const t = (g.table || "").trim();
-        if (!t) return;
-        const key = t.toLowerCase();
-        counts[key] = (counts[key] || 0) + 1;
-      });
-      state.tableCounts = counts;
     }
 
     // Normalise strings for search
@@ -1016,6 +1031,7 @@
     }
 
     function setMode(mode) {
+      if (mode === state.mode) return;
       state.mode = mode;
 
       if (mode === "search") {
@@ -1024,7 +1040,7 @@
         dom.modeSearchBtn.setAttribute("aria-selected", "true");
         dom.modeTableBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "";
-        dom.tablePanel.style.display = "none";
+        dom.tablePanel.style.display = "none"; // stays hidden anyway
         dom.searchInput.focus();
       } else {
         dom.modeTableBtn.classList.add("active");
@@ -1032,7 +1048,13 @@
         dom.modeTableBtn.setAttribute("aria-selected", "true");
         dom.modeSearchBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "none";
-        dom.tablePanel.style.display = "none"; // UI is map-only
+        dom.tablePanel.style.display = "none";
+      }
+
+      // Reset search text when switching to table mode so summary text isn't confusing
+      if (mode === "table") {
+        state.searchTerm = "";
+        dom.searchInput.value = "";
       }
 
       render();
@@ -1062,27 +1084,40 @@
       if (!dom.roomMapWrapper || !dom.mapTables) return;
 
       const isTableMode = state.mode === "table";
+      const table = (state.selectedTable || "").trim();
 
       if (!isTableMode) {
         dom.roomMapWrapper.style.display = "none";
         dom.mapTables.forEach(el => el.classList.remove("active"));
+        if (dom.tableSummary) dom.tableSummary.textContent = "";
         return;
       }
 
       // In table mode: always show the map
       dom.roomMapWrapper.style.display = "";
 
-      const selected = (state.selectedTable || "").trim().toLowerCase();
       dom.mapTables.forEach(el => {
-        const t = (el.getAttribute("data-table") || "").trim().toLowerCase();
-        el.classList.toggle("active", !!selected && t === selected);
+        const isActive = table && el.getAttribute("data-table") === table;
+        el.classList.toggle("active", !!isActive);
       });
+
+      // Update "Table XX (YY guests)" under the map
+      if (dom.tableSummary) {
+        if (table) {
+          const count = state.tableCounts[table] || 0;
+          const label = count === 1 ? "1 guest" : `${count} guests`;
+          dom.tableSummary.textContent = `Table ${table} (${label})`;
+        } else {
+          dom.tableSummary.textContent = "Tap a table on the map to view its guests.";
+        }
+      }
     }
 
     function render() {
       if (!state.loaded) {
         dom.activeFilter.textContent = "Loading guest list…";
         dom.results.innerHTML = "";
+        if (dom.searchTip) dom.searchTip.style.display = "none";
         updateMapHighlight();
         return;
       }
@@ -1093,6 +1128,7 @@
         ? searchTermNormalized.length > 0
         : (state.selectedTable || "").trim().length > 0;
 
+      // Clear button visibility
       if (dom.clearSearchBtn) {
         if (searchTermNormalized.length > 0 && isSearchMode) {
           dom.clearSearchBtn.style.display = "flex";
@@ -1101,33 +1137,23 @@
         }
       }
 
-      // Active filter text
-      if (!hasQuery) {
-        dom.activeFilter.textContent = "";
-      } else if (isSearchMode) {
-        dom.activeFilter.textContent = state.searchTerm
-          ? `Filter: “${state.searchTerm}”`
-          : "";
-      } else {
-        const t = (state.selectedTable || "").trim();
-        const key = t.toLowerCase();
-        const count = state.tableCounts[key] || 0;
-        if (t) {
-          if (count > 0) {
-            dom.activeFilter.textContent = `Table: ${t} (${count} ${count === 1 ? "guest" : "guests"})`;
-          } else {
-            dom.activeFilter.textContent = `Table: ${t}`;
-          }
+      // Summary text (top right) – only used for search filter now
+      if (isSearchMode) {
+        if (hasQuery && state.searchTerm) {
+          dom.activeFilter.textContent = `Filter: “${state.searchTerm}”`;
         } else {
-          dom.activeFilter.textContent = "";
+          dom.activeFilter.textContent = ""; // remove duplicate instructions
         }
+      } else {
+        dom.activeFilter.textContent = "";
       }
 
-      // No query yet
       if (!hasQuery) {
         dom.results.innerHTML = isSearchMode
           ? '<div class="empty-state">Begin by typing a first name, last name, or company.</div>'
-          : '<div class="empty-state">Tap any table on the map to see who is seated there.</div>';
+          : '<div class="empty-state">Tap any table on the map above to see who is seated there.</div>';
+
+        if (dom.searchTip) dom.searchTip.style.display = "none";
         updateMapHighlight();
         return;
       }
@@ -1135,9 +1161,15 @@
       const guests = getFilteredGuests();
 
       if (guests.length === 0) {
-        dom.results.innerHTML = isSearchMode
-          ? '<div class="empty-state">No results found. Please check the spelling or try a different name or company.</div>'
-          : '<div class="empty-state">No guests are currently assigned to this table.</div>';
+        // Different message depending on mode
+        if (isSearchMode) {
+          dom.results.innerHTML =
+            '<div class="empty-state">No results found. Please check the spelling or try a different name or company.</div>';
+        } else {
+          dom.results.innerHTML =
+            '<div class="empty-state">No guests found for this table.</div>';
+        }
+        if (dom.searchTip) dom.searchTip.style.display = "none";
         updateMapHighlight();
         return;
       }
@@ -1172,25 +1204,36 @@
       dom.results.innerHTML = "";
       dom.results.appendChild(fragment);
 
-      // TIP under results in search mode
-      if (isSearchMode) {
-        const tip = document.createElement("div");
-        tip.className = "results-tip";
-        tip.textContent = "TIP: Tap the table number to see where it is in the room.";
-        dom.results.appendChild(tip);
-      }
-
       // Clicking "TABLE X" in results switches to table mode and highlights on map
       const tableLinks = dom.results.querySelectorAll(".table-link");
       tableLinks.forEach(btn => {
         btn.addEventListener("click", () => {
           const table = btn.getAttribute("data-table");
-          state.selectedTable = table;
+          state.mode = "table";
+
+          dom.modeSearchBtn.classList.remove("active");
+          dom.modeTableBtn.classList.add("active");
+          dom.modeSearchBtn.setAttribute("aria-selected", "false");
+          dom.modeTableBtn.setAttribute("aria-selected", "true");
+          dom.searchPanel.style.display = "none";
+          dom.tablePanel.style.display = "none";
+
           dom.tableSelect.value = table;
-          setMode("table"); // will also call render()
+          state.selectedTable = table;
+
+          render();
           dom.results.scrollTop = 0;
         });
       });
+
+      // Show / hide search tip
+      if (dom.searchTip) {
+        if (isSearchMode && guests.length > 0) {
+          dom.searchTip.style.display = "block";
+        } else {
+          dom.searchTip.style.display = "none";
+        }
+      }
 
       updateMapHighlight();
     }
