@@ -288,8 +288,8 @@
 
     .room-map-wrapper {
       margin-top: 18px;
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      padding-top: 14px;
+      padding-top: 0;
+      border-top: none;   /* no horizontal line above TABLE LOCATION */
     }
 
     .map-title {
@@ -297,14 +297,14 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--text-muted);
+      margin: 0 0 4px;
+    }
+
+    .map-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
       margin: 0 0 10px;
     }
-	  
-	.map-hint {
-	  font-size: 0.8rem;
-	  color: var(--text-muted);
-	  margin: 2px 0 10px;
-	}
 
     .room-map {
       position: relative;
@@ -444,7 +444,7 @@
             <p class="hint">Search ignores case and punctuation such as apostrophes.</p>
           </div>
 
-          <!-- Table dropdown (kept for code simplicity, but always hidden) -->
+          <!-- Table dropdown (kept for internal state, always hidden) -->
           <div class="field" id="panel-table" style="display:none;">
             <label for="tableSelect">Table number</label>
             <select id="tableSelect">
@@ -463,21 +463,18 @@
         <!-- Error -->
         <div class="error-state" id="errorMessage" role="alert" style="display:none;"></div>
 
-        <!-- Results -->
-        <section class="results" id="results" aria-live="polite" aria-label="Guest results list"></section>
-
-        <!-- Room map -->
+        <!-- Room map (now appears ABOVE results) -->
         <section
-  class="room-map-wrapper"
-  id="roomMapWrapper"
-  aria-label="Room layout"
-  style="display:none;"
->
-  <h2 class="map-title">Table location</h2>
-  <p class="map-hint">Tap any table on the map to see who is seated there.</p>
+          class="room-map-wrapper"
+          id="roomMapWrapper"
+          aria-label="Room layout"
+          style="display:none;"
+        >
+          <h2 class="map-title">Table location</h2>
+          <p class="map-hint">Tap any table on the map to see who is seated there.</p>
 
-  <div class="room-map">
-    <!-- Inline SVG room map -->
+          <div class="room-map">
+            <!-- Inline SVG room map -->
             <svg xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 648 1106"
                  role="img"
@@ -792,6 +789,9 @@
             </svg>
           </div>
         </section>
+
+        <!-- Results (now below the map) -->
+        <section class="results" id="results" aria-live="polite" aria-label="Guest results list"></section>
       </main>
     </div>
   </div>
@@ -846,7 +846,6 @@
       });
 
       dom.tableSelect.addEventListener("change", () => {
-        // Dropdown kept hidden; code left here harmlessly in case ever used
         state.selectedTable = dom.tableSelect.value;
         render();
       });
@@ -868,7 +867,7 @@
             if (!table) return;
             setMode("table");
             state.selectedTable = table;
-            dom.tableSelect.value = table; // keeps things in sync, even if hidden
+            dom.tableSelect.value = table; // sync hidden select
             render();
             dom.results.scrollTop = 0;
           });
@@ -887,7 +886,7 @@
         const text = await response.text();
         state.guests = parseCsv(text);
         state.loaded = true;
-        buildTableDropdown(state.guests); // fills hidden dropdown; cheap and harmless
+        buildTableDropdown(state.guests); // fills hidden dropdown
         render();
       } catch (err) {
         console.error(err);
@@ -1013,7 +1012,7 @@
         dom.modeSearchBtn.setAttribute("aria-selected", "true");
         dom.modeTableBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "";
-        dom.tablePanel.style.display = "none"; // stays hidden anyway
+        dom.tablePanel.style.display = "none";
         dom.searchInput.focus();
       } else {
         dom.modeTableBtn.classList.add("active");
@@ -1021,8 +1020,7 @@
         dom.modeTableBtn.setAttribute("aria-selected", "true");
         dom.modeSearchBtn.setAttribute("aria-selected", "false");
         dom.searchPanel.style.display = "none";
-        // tablePanel remains hidden; map is the UI
-        dom.tablePanel.style.display = "none";
+        dom.tablePanel.style.display = "none"; // keep hidden
       }
 
       render();
@@ -1091,12 +1089,12 @@
         }
       }
 
-if (!hasQuery) {
-  if (isSearchMode) {
-    dom.activeFilter.textContent = "Start typing a name or company.";
-  } else {
-    dom.activeFilter.textContent = "";
-  }
+      if (!hasQuery) {
+        if (isSearchMode) {
+          dom.activeFilter.textContent = "Start typing a name or company.";
+        } else {
+          dom.activeFilter.textContent = ""; // no extra instructions; map text handles it
+        }
       } else if (isSearchMode) {
         dom.activeFilter.textContent = state.searchTerm
           ? `Filter: “${state.searchTerm}”`
@@ -1108,9 +1106,13 @@ if (!hasQuery) {
       }
 
       if (!hasQuery) {
-dom.results.innerHTML = isSearchMode
-  ? '<div class="empty-state">Begin by typing a first name, last name, or company.</div>'
-  : '<div class="empty-state"></div>';
+        if (isSearchMode) {
+          dom.results.innerHTML =
+            '<div class="empty-state">Begin by typing a first name, last name, or company.</div>';
+        } else {
+          // Table mode with no table selected: just show blank area; map carries instructions.
+          dom.results.innerHTML = "";
+        }
         updateMapHighlight();
         return;
       }
