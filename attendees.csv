@@ -49,8 +49,6 @@ Emily ,Whelan,MD Hair Salon (Carlow),5
 Meg ,Farrell,MD Hair Salon (Carlow),5
 Catherine ,Waters,Complete Laser Care,5
 Helena ,Ryan,Complete Laser Care,5
-Karen,Broderick,Beyond Beauty Galway,5
-Cathal,Cassidy,Beyond Beauty Galway,5
 Gary,Malone,Brushdoc,5
 Ciara,Malone,Brushdoc,5
 Nicola,Nolan,ND Skin & Beauty,5
@@ -68,6 +66,7 @@ Brendan, Molloy ,South William Clinic,6
 Joseph, Blanco,South William Clinic,6
 Alexandra ,Olaru,South William Clinic,6
 Jessica,Bowes,South William Clinic,6
+Fiona,Heaney,Fee G,6
 Luke,Nolan,Lukey Lukey Beauty,7
 Brian,Higgins,Galway Skin Clinic,7
 Eva,Higgins,Galway Skin Clinic,7
@@ -174,7 +173,7 @@ Jill,Deering,fabÜ,15
 Caoimhe,McGinley,fabÜ,15
 Eavanna,Breen,Eavanna Breen,16
 Georgie,Crawford,Eavanna Breen,16
-Gelnda,Gilson,Eavanna Breen,16
+Glenda,Gilson,Eavanna Breen,16
 Thalia,Heffernan,Eavanna Breen,16
 Nicola,Rush,Eavanna Breen,16
 Karen,Connolly,Eavanna Breen,16
@@ -234,11 +233,11 @@ Grace,Dunne,Grace Dunne Makeup & Mobile Tan,20
 Harriet,Wen Jing Zhang,Nails by Harriet,20
 Joyce,Porto,Rob Kenny PR,21
 Triona,McCarthy,Rob Kenny PR,21
-Ashley,Kehoe,Rob Kenny PR,21
+Avila,Lipsett ,Rob Kenny PR,21
 Jess,Colivet,Rob Kenny PR,21
 Louise,Duffy,Rob Kenny PR,21
 Louise,McSharry,Rob Kenny PR,21
-Shauna,Lindsay,Rob Kenny PR,21
+Joanna ,Cluskey,Rob Kenny PR,21
 Rob,Kenny,Rob Kenny PR,21
 Billy,Bunzari,Rob Kenny PR,21
 Mark,Walton,Rob Kenny PR,21
@@ -302,17 +301,16 @@ Aimee,Prizeman,Poco Beauty,26
 Simone,Canavan,Poco Beauty,26
 Rachel,Donnelly,Poco Beauty,26
 Sarah,Dicker,Poco Beauty,26
-Celine,Slamon,Roy Leigh,27
-Roy,Leigh,Roy Leigh,27
-Elayne,Lynch,Roy Leigh,27
-Lauren,O'Connell,Roy Leigh,27
-Abigail,Delaney,Roy Leigh,27
-Shakira,Clohessy,Roy Leigh,27
-Lou,Merryweather,Roy Leigh,27
-Breifne,Keogh,Breifne Keogh,27
-Lisa,O'Brien,Breifne Keogh,27
-Tracy,Clare,Breifne Keogh,27
-Ciara,Doyle,Breifne Keogh,27
+Celine,Slamon,No. 72 The Gallery,27
+Roy,Leigh,No. 72 The Gallery,27
+Elayne,Lynch,No. 72 The Gallery,27
+Lauren,O'Connell,No. 72 The Gallery,27
+Abigail,Delaney,No. 72 The Gallery,27
+Shakira,Clohessy,No. 72 The Gallery,27
+Breifne,Keogh,MUA,27
+Lisa,O'Brien,MUA,27
+Tracy,Clare,MUA,27
+Ciara,Doyle,MUA,27
 Helena,McMahon,Seabody,27
 Anita,Kucsera,Annutri,28
 Steve,Kucsera,Annutri,28
@@ -688,7 +686,7 @@ Ann,Marie Lynam,Ann Marie Lynam,60
 Niamh,Hogan,Holos,61
 Tara,Gilleece,Holos,61
 Anna,O'Connell,Holos,61
-Sally,Foran,Holos,61
+ Chloe,Hilditch,Holos,61
 Colin,Horgan,New Hair Order,61
 Lisa,May,New Hair Order,61
 David,Reynolds,New Hair Order,61
